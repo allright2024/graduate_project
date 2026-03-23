@@ -12,11 +12,6 @@ Optimized objective (summed over selected layers):
 where A_ref_self^(l) is the attn1 self-attention probability tensor of the
 reference UNet at the selected timestep.
 
-Also supports visualization of selected self-attention maps:
-- mean attention matrix over batch and heads
-- mean key activation map (averaged over queries)
-- center-query key activation map
-
 Key properties
 --------------
 - Denoising UNet is NEVER used.
@@ -24,6 +19,21 @@ Key properties
 - PGD updates are applied ONLY where cloth_mask == 1.
 - Model weights stay frozen; gradients flow only to the reference image.
 - Default layer scope is mid_block for lower memory use.
+
+Example
+-------
+python optimize_reference_attention_pgd.py \
+  --pretrained_model_name_or_path ./ckpts/stable-diffusion-inpainting \
+  --pretrained_model ./ckpts/virtual_tryon.pth \
+  --ref_image /workspace/train/cloth/00000_00.jpg \
+  --cloth_mask_image /workspace/train/cloth-mask/00000_00.jpg \
+  --target_step_index 0 \
+  --layer_scope mid \
+  --dtype float16 \
+  --pgd_steps 10 \
+  --epsilon 8.0 \
+  --alpha 1.0 \
+  --output_dir ./pgd_ref_attention_out
 """
 
 from __future__ import annotations
@@ -31,13 +41,11 @@ from __future__ import annotations
 import argparse
 import json
 import math
-import re
 from pathlib import Path
-from typing import Any, Dict, List, Optional, Tuple
+from typing import Any, Dict, List, Optional
 import re
 
 import torch
-import torch.nn.functional as F
 from PIL import Image
 
 from leffa.model import LeffaModel, SkipAttnProcessor
@@ -69,61 +77,22 @@ def delta_to_pil(delta_tensor: torch.Tensor, scale: float = 8.0) -> Image.Image:
     return Image.fromarray(x)
 
 
-def sanitize_name(name: str) -> str:
-    return re.sub(r"[^A-Za-z0-9_.-]+", "_", name)
-
-
-def normalize_to_uint8(x: torch.Tensor) -> Image.Image:
-    x = x.detach().float().cpu()
-    x_min = float(x.min().item())
-    x_max = float(x.max().item())
-    if x_max - x_min < 1e-12:
-        arr = torch.zeros_like(x, dtype=torch.uint8)
-    else:
-        arr = ((x - x_min) / (x_max - x_min) * 255.0).round().clamp(0, 255).to(torch.uint8)
-    return Image.fromarray(arr.numpy(), mode="L")
-
-
-def infer_hw_from_seq_len(seq_len: int, aspect_ratio: float) -> Optional[Tuple[int, int]]:
-    best = None
-    best_err = float("inf")
-    root = int(math.sqrt(seq_len))
-    for h in range(1, root + 1):
-        if seq_len % h != 0:
-            continue
-        w = seq_len // h
-        for hh, ww in ((h, w), (w, h)):
-            err = abs((hh / ww) - aspect_ratio)
-            if err < best_err:
-                best_err = err
-                best = (hh, ww)
-    return best
-
-
 class LossContext:
     def __init__(
         self,
         target_timestep: int,
         layer_scope: str = "mid",
         layer_substr: Optional[str] = None,
-        vis_max_layers: int = 8,
-        vis_max_side: int = 512,
-        image_aspect_ratio: float = 1024 / 768,
     ) -> None:
         self.target_timestep = int(target_timestep)
         self.layer_scope = layer_scope
         self.layer_substr = layer_substr
         self.current_timestep: Optional[int] = None
-        self.vis_max_layers = int(vis_max_layers)
-        self.vis_max_side = int(vis_max_side)
-        self.image_aspect_ratio = float(image_aspect_ratio)
-        self.capture_visuals = False
         self.reset()
 
     def reset(self) -> None:
         self.loss_terms: List[torch.Tensor] = []
         self.layer_records: List[Dict[str, Any]] = []
-        self.visual_records: Dict[str, Dict[str, Any]] = {}
 
     def should_record(self, layer_name: str) -> bool:
         if self.current_timestep != self.target_timestep:
@@ -133,52 +102,6 @@ class LossContext:
         if self.layer_substr and self.layer_substr not in layer_name:
             return False
         return True
-
-    def maybe_capture_visual(self, layer_name: str, attn_probs: torch.Tensor) -> None:
-        if not self.capture_visuals:
-            return
-        if layer_name in self.visual_records:
-            return
-        if len(self.visual_records) >= self.vis_max_layers:
-            return
-
-        # attn_probs: [B, H, Q, K]
-        mean_matrix = attn_probs.mean(dim=(0, 1))  # [Q, K]
-        q_len, k_len = mean_matrix.shape
-
-        matrix_for_vis = mean_matrix
-        max_side = max(q_len, k_len)
-        if max_side > self.vis_max_side:
-            scale = self.vis_max_side / max_side
-            new_h = max(1, int(round(q_len * scale)))
-            new_w = max(1, int(round(k_len * scale)))
-            matrix_for_vis = F.interpolate(
-                mean_matrix[None, None].float(),
-                size=(new_h, new_w),
-                mode="bilinear",
-                align_corners=False,
-            )[0, 0]
-
-        mean_key = mean_matrix.mean(dim=0)
-        center_query_idx = int(q_len // 2)
-        center_query = mean_matrix[center_query_idx]
-
-        inferred_hw = infer_hw_from_seq_len(k_len, self.image_aspect_ratio)
-        mean_key_map = None
-        center_query_map = None
-        if inferred_hw is not None and inferred_hw[0] * inferred_hw[1] == k_len:
-            h, w = inferred_hw
-            mean_key_map = mean_key.view(h, w)
-            center_query_map = center_query.view(h, w)
-
-        self.visual_records[layer_name] = {
-            "matrix": matrix_for_vis.detach().float().cpu(),
-            "mean_key_map": None if mean_key_map is None else mean_key_map.detach().float().cpu(),
-            "center_query_map": None if center_query_map is None else center_query_map.detach().float().cpu(),
-            "shape": [int(q_len), int(k_len)],
-            "center_query_index": center_query_idx,
-            "spatial_hw": None if inferred_hw is None else [int(inferred_hw[0]), int(inferred_hw[1])],
-        }
 
     def add_loss(self, layer_name: str, tensor: torch.Tensor) -> None:
         norm = torch.linalg.vector_norm(tensor.float())
@@ -190,7 +113,6 @@ class LossContext:
                 "shape": list(tensor.shape),
             }
         )
-        self.maybe_capture_visual(layer_name, tensor)
 
     def reduced(self, device: torch.device) -> torch.Tensor:
         if not self.loss_terms:
@@ -352,11 +274,9 @@ def run_reference_loss(
     ref_image: torch.Tensor,
     target_timestep: int,
     ctx: LossContext,
-    capture_visuals: bool = False,
 ) -> tuple[torch.Tensor, Dict[str, Any]]:
     ctx.reset()
     ctx.current_timestep = int(target_timestep)
-    ctx.capture_visuals = bool(capture_visuals)
 
     device = module_device(model.vae)
     vae_dtype = next(model.vae.parameters()).dtype
@@ -381,78 +301,66 @@ def run_reference_loss(
         "target_timestep": int(target_timestep),
         "summary": ctx.detached_summary(),
         "reduced": {"reference_self": float(total.detach().cpu().item())},
-        "visual_records": ctx.visual_records,
     }
     return total, meta
 
 
-@torch.no_grad()
-def save_attention_visuals(visual_records: Dict[str, Dict[str, Any]], phase_dir: Path) -> List[Dict[str, Any]]:
-    phase_dir.mkdir(parents=True, exist_ok=True)
-    manifest: List[Dict[str, Any]] = []
+def is_image_file(path: Path) -> bool:
+    return path.is_file() and path.suffix.lower() in {".png", ".jpg", ".jpeg", ".bmp", ".webp"}
 
-    for layer_name, record in visual_records.items():
-        safe = sanitize_name(layer_name)
-        layer_dir = phase_dir / safe
-        layer_dir.mkdir(parents=True, exist_ok=True)
-
-        matrix_path = layer_dir / "matrix_mean.png"
-        normalize_to_uint8(record["matrix"]).save(matrix_path)
-
-        row = {
-            "layer_name": layer_name,
-            "shape": record["shape"],
-            "center_query_index": record["center_query_index"],
-            "spatial_hw": record["spatial_hw"],
-            "files": {
-                "matrix_mean": str(matrix_path.name),
-            },
-        }
-
-        if record["mean_key_map"] is not None:
-            mean_key_path = layer_dir / "mean_key_map.png"
-            normalize_to_uint8(record["mean_key_map"]).save(mean_key_path)
-            row["files"]["mean_key_map"] = str(mean_key_path.name)
-
-        if record["center_query_map"] is not None:
-            center_path = layer_dir / "center_query_map.png"
-            normalize_to_uint8(record["center_query_map"]).save(center_path)
-            row["files"]["center_query_map"] = str(center_path.name)
-
-        manifest.append(row)
-
-    return manifest
+def sanitize_name(name: str) -> str:
+    return re.sub(r"[^A-Za-z0-9_.-]+", "_", name)
 
 
-def pgd_optimize(args: argparse.Namespace) -> None:
-    if not torch.cuda.is_available() and args.dtype == "float16":
-        print("[WARN] CUDA is unavailable, forcing dtype from float16 to float32.")
-        args.dtype = "float32"
+def collect_matched_pairs(ref_path: Path, mask_path: Path) -> List[Tuple[Path, Path]]:
+    if ref_path.is_file() and mask_path.is_file():
+        return [(ref_path, mask_path)]
+    if ref_path.is_dir() and mask_path.is_dir():
+        ref_files = {x.name: x for x in sorted(ref_path.iterdir()) if is_image_file(x)}
+        mask_files = {x.name: x for x in sorted(mask_path.iterdir()) if is_image_file(x)}
+        common = sorted(set(ref_files.keys()) & set(mask_files.keys()))
+        if not common:
+            raise ValueError(
+                f"No matching image filenames found between {ref_path} and {mask_path}."
+            )
+        missing_masks = sorted(set(ref_files.keys()) - set(mask_files.keys()))
+        missing_refs = sorted(set(mask_files.keys()) - set(ref_files.keys()))
+        if missing_masks:
+            print(f"[WARN] {len(missing_masks)} ref images have no matching mask and will be skipped.")
+        if missing_refs:
+            print(f"[WARN] {len(missing_refs)} mask images have no matching ref and will be skipped.")
+        return [(ref_files[name], mask_files[name]) for name in common]
+    raise ValueError(
+        "ref_image and cloth_mask_image must either both be files or both be directories."
+    )
 
-    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    model = build_model(args, device)
 
+def optimize_one_pair(
+    args: argparse.Namespace,
+    model: LeffaModel,
+    target_timestep: int,
+    ref_image_path: Path,
+    cloth_mask_path: Path,
+    out_dir: Path,
+) -> Dict[str, Any]:
+    device = module_device(model.vae)
     image_dtype = next(model.vae.parameters()).dtype
+
     clean_ref, cloth_mask = prepare_ref_and_mask(
-        ref_image_path=args.ref_image,
-        cloth_mask_path=args.cloth_mask_image,
+        ref_image_path=str(ref_image_path),
+        cloth_mask_path=str(cloth_mask_path),
         device=device,
         image_dtype=image_dtype,
     )
-    target_timestep = resolve_target_timestep(args, model)
 
     ctx = LossContext(
         target_timestep=target_timestep,
         layer_scope=args.layer_scope,
         layer_substr=args.layer_substr,
-        vis_max_layers=args.vis_max_layers,
-        vis_max_side=args.vis_max_side,
-        image_aspect_ratio=args.image_height / args.image_width,
     )
     install_reference_loss_processors(model.unet_encoder, ctx)
 
     adv_ref = clean_ref.clone().detach()
-
     eps = float(args.epsilon) * (2.0 / 255.0)
     alpha = float(args.alpha) * (2.0 / 255.0)
 
@@ -464,14 +372,13 @@ def pgd_optimize(args: argparse.Namespace) -> None:
     history: List[Dict[str, Any]] = []
 
     with torch.no_grad():
-        clean_loss, clean_meta = run_reference_loss(
+        _, clean_meta = run_reference_loss(
             model=model,
             ref_image=clean_ref,
             target_timestep=target_timestep,
             ctx=ctx,
-            capture_visuals=args.save_attention_vis,
         )
-    history.append({"iteration": -1, "kind": "clean", **{k: v for k, v in clean_meta.items() if k != "visual_records"}})
+    history.append({"iteration": -1, "kind": "clean", **clean_meta})
 
     for step in range(args.pgd_steps):
         adv_ref = adv_ref.detach().clone().requires_grad_(True)
@@ -482,7 +389,6 @@ def pgd_optimize(args: argparse.Namespace) -> None:
             ref_image=adv_ref,
             target_timestep=target_timestep,
             ctx=ctx,
-            capture_visuals=False,
         )
         loss.backward()
 
@@ -496,22 +402,19 @@ def pgd_optimize(args: argparse.Namespace) -> None:
             delta = delta * cloth_mask
             adv_ref = torch.clamp(clean_ref + delta, min=-1.0, max=1.0)
 
-        history.append({"iteration": step, "kind": "pgd", **{k: v for k, v in meta.items() if k != "visual_records"}})
-        print(f"[iter {step:03d}] reference_self={meta['reduced']['reference_self']:.6f}")
+        history.append({"iteration": step, "kind": "pgd", **meta})
+        print(f"[{ref_image_path.name}] [iter {step:03d}] reference_self={meta['reduced']['reference_self']:.6f}")
 
     with torch.no_grad():
-        final_loss, final_meta = run_reference_loss(
+        _, final_meta = run_reference_loss(
             model=model,
             ref_image=adv_ref.detach(),
             target_timestep=target_timestep,
             ctx=ctx,
-            capture_visuals=args.save_attention_vis,
         )
-    history.append({"iteration": args.pgd_steps, "kind": "final", **{k: v for k, v in final_meta.items() if k != "visual_records"}})
+    history.append({"iteration": args.pgd_steps, "kind": "final", **final_meta})
 
-    out_dir = Path(args.output_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
-
     clean_pil = tensor_to_pil(clean_ref)
     adv_pil = tensor_to_pil(adv_ref.detach())
     delta_pil = delta_to_pil((adv_ref.detach() - clean_ref).detach(), scale=max(args.epsilon, 1.0))
@@ -520,18 +423,12 @@ def pgd_optimize(args: argparse.Namespace) -> None:
     adv_pil.save(out_dir / "cloth_adv.png")
     delta_pil.save(out_dir / "cloth_delta_vis.png")
 
-    vis_manifest = {}
-    if args.save_attention_vis:
-        vis_dir = out_dir / "attention_vis"
-        vis_manifest["clean"] = save_attention_visuals(clean_meta["visual_records"], vis_dir / "clean")
-        vis_manifest["final"] = save_attention_visuals(final_meta["visual_records"], vis_dir / "final")
-
     result = {
         "config": {
             "pretrained_model_name_or_path": args.pretrained_model_name_or_path,
             "pretrained_model": args.pretrained_model,
-            "ref_image": args.ref_image,
-            "cloth_mask_image": args.cloth_mask_image,
+            "ref_image": str(ref_image_path),
+            "cloth_mask_image": str(cloth_mask_path),
             "target_timestep": int(target_timestep),
             "target_step_index": args.target_step_index,
             "num_inference_steps": args.num_inference_steps,
@@ -542,30 +439,82 @@ def pgd_optimize(args: argparse.Namespace) -> None:
             "epsilon_pixels": args.epsilon,
             "alpha_pixels": args.alpha,
             "random_start": args.random_start,
-            "save_attention_vis": args.save_attention_vis,
-            "vis_max_layers": args.vis_max_layers,
-            "vis_max_side": args.vis_max_side,
-            "image_height": args.image_height,
-            "image_width": args.image_width,
         },
         "history": history,
-        "visualization_manifest": vis_manifest,
         "final_delta_linf_normalized": float((adv_ref.detach() - clean_ref).abs().max().cpu().item()),
     }
     (out_dir / "optimization_log.json").write_text(json.dumps(result, indent=2, ensure_ascii=False))
 
-    print(f"[OK] Saved optimized cloth to: {out_dir / 'cloth_adv.png'}")
-    if args.save_attention_vis:
-        print(f"[OK] Saved attention maps to: {out_dir / 'attention_vis'}")
-    print(f"[OK] Saved logs to: {out_dir / 'optimization_log.json'}")
+    return {
+        "file_name": ref_image_path.name,
+        "output_dir": str(out_dir),
+        "final_reference_self": final_meta["reduced"]["reference_self"],
+        "final_delta_linf_normalized": result["final_delta_linf_normalized"],
+    }
 
+
+def pgd_optimize(args: argparse.Namespace) -> None:
+    if not torch.cuda.is_available() and args.dtype == "float16":
+        print("[WARN] CUDA is unavailable, forcing dtype from float16 to float32.")
+        args.dtype = "float32"
+
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    model = build_model(args, device)
+    target_timestep = resolve_target_timestep(args, model)
+
+    ref_path = Path(args.ref_image)
+    mask_path = Path(args.cloth_mask_image)
+    pairs = collect_matched_pairs(ref_path, mask_path)
+
+    output_root = Path(args.output_dir)
+    output_root.mkdir(parents=True, exist_ok=True)
+
+    summaries: List[Dict[str, Any]] = []
+    multi = len(pairs) > 1 or ref_path.is_dir()
+
+    for idx, (this_ref, this_mask) in enumerate(pairs, start=1):
+        print(f"[INFO] Processing {idx}/{len(pairs)}: {this_ref.name}")
+        this_out = output_root / sanitize_name(this_ref.stem) if multi else output_root
+        summary = optimize_one_pair(
+            args=args,
+            model=model,
+            target_timestep=target_timestep,
+            ref_image_path=this_ref,
+            cloth_mask_path=this_mask,
+            out_dir=this_out,
+        )
+        summaries.append(summary)
+
+    if multi:
+        batch_summary = {
+            "num_pairs": len(summaries),
+            "target_timestep": int(target_timestep),
+            "items": summaries,
+        }
+        (output_root / "batch_summary.json").write_text(
+            json.dumps(batch_summary, indent=2, ensure_ascii=False)
+        )
+        print(f"[OK] Saved batch summary to: {output_root / 'batch_summary.json'}")
+    elif summaries:
+        print(f"[OK] Saved optimized cloth to: {output_root / 'cloth_adv.png'}")
+        print(f"[OK] Saved logs to: {output_root / 'optimization_log.json'}")
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser()
     parser.add_argument("--pretrained_model_name_or_path", type=str, required=True)
     parser.add_argument("--pretrained_model", type=str, required=True)
-    parser.add_argument("--ref_image", type=str, required=True)
-    parser.add_argument("--cloth_mask_image", type=str, required=True)
+    parser.add_argument(
+        "--ref_image",
+        type=str,
+        required=True,
+        help="Path to a single cloth image or a directory of cloth images.",
+    )
+    parser.add_argument(
+        "--cloth_mask_image",
+        type=str,
+        required=True,
+        help="Path to a single cloth mask or a directory of cloth masks with matching filenames.",
+    )
     parser.add_argument("--target_timestep", type=int, default=None)
     parser.add_argument("--target_step_index", type=int, default=0)
     parser.add_argument(
@@ -595,8 +544,6 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--save_attention_vis", action="store_true")
     parser.add_argument("--vis_max_layers", type=int, default=8)
     parser.add_argument("--vis_max_side", type=int, default=512)
-    parser.add_argument("--image_height", type=int, default=1024)
-    parser.add_argument("--image_width", type=int, default=768)
     parser.add_argument("--output_dir", type=str, default="pgd_ref_attention_out")
     return parser.parse_args()
 
