@@ -1,0 +1,86 @@
+{
+  "config": {
+    "pretrained_model_name_or_path": "runwayml/stable-diffusion-inpainting",
+    "pretrained_model": "./ckpts/virtual_tryon.pth",
+    "src_image": "/workspace/vton/train/image/00000_00.jpg",
+    "ref_image": "/workspace/vton/train/cloth/00000_00.jpg",
+    "model_mask_image": "/workspace/vton/train/agnostic-mask/00000_00_mask.png",
+    "cloth_mask_image": "/workspace/vton/train/cloth-mask/00000_00.jpg",
+    "densepose_image": "/workspace/vton/train/image-densepose/00000_00.jpg",
+    "target_cloth_image": null,
+    "dataset": "virtual_tryon",
+    "target_timestep": 981,
+    "target_step_index": 0,
+    "num_inference_steps": 50,
+    "guidance_scale": 2.5,
+    "seed": 42,
+    "dtype": "float16",
+    "pgd_steps": 10,
+    "epsilon_pixels": 8.0,
+    "alpha_pixels": 1.0,
+    "random_start": false
+  },
+  "history": [
+    {
+      "iteration": -1,
+      "kind": "clean",
+      "loss": 8.734375
+    },
+    {
+      "iteration": 0,
+      "kind": "pgd",
+      "loss": 8.734375
+    },
+    {
+      "iteration": 1,
+      "kind": "pgd",
+      "loss": 7.88671875
+    },
+    {
+      "iteration": 2,
+      "kind": "pgd",
+      "loss": 6.05078125
+    },
+    {
+      "iteration": 3,
+      "kind": "pgd",
+      "loss": 4.9375
+    },
+    {
+      "iteration": 4,
+      "kind": "pgd",
+      "loss": 4.046875
+    },
+    {
+      "iteration": 5,
+      "kind": "pgd",
+      "loss": 3.1484375
+    },
+    {
+      "iteration": 6,
+      "kind": "pgd",
+      "loss": 2.96875
+    },
+    {
+      "iteration": 7,
+      "kind": "pgd",
+      "loss": 4.58984375
+    },
+    {
+      "iteration": 8,
+      "kind": "pgd",
+      "loss": 2.908203125
+    },
+    {
+      "iteration": 9,
+      "kind": "pgd",
+      "loss": 2.8125
+    },
+    {
+      "iteration": 10,
+      "kind": "final",
+      "loss": 3.63671875
+    }
+  ],
+  "final_delta_linf_normalized": 0.062745101749897
+}

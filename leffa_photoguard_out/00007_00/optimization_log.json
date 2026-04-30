@@ -1,0 +1,186 @@
+{
+  "config": {
+    "pretrained_model_name_or_path": "runwayml/stable-diffusion-inpainting",
+    "pretrained_model": "./ckpts/virtual_tryon.pth",
+    "src_image": "/workspace/vton/train/image/00007_00.jpg",
+    "ref_image": "/workspace/vton/train/cloth/00007_00.jpg",
+    "model_mask_image": "/workspace/vton/train/agnostic-mask/00007_00_mask.png",
+    "cloth_mask_image": "/workspace/vton/train/cloth-mask/00007_00.jpg",
+    "densepose_image": "/workspace/vton/train/image-densepose/00007_00.jpg",
+    "target_cloth_image": null,
+    "dataset": "virtual_tryon",
+    "target_timestep": 981,
+    "target_step_index": 0,
+    "num_inference_steps": 50,
+    "guidance_scale": 2.5,
+    "seed": 42,
+    "dtype": "float16",
+    "pgd_steps": 30,
+    "epsilon_pixels": 8.0,
+    "alpha_pixels": 1.0,
+    "random_start": false
+  },
+  "history": [
+    {
+      "iteration": -1,
+      "kind": "clean",
+      "loss": 5.4140625
+    },
+    {
+      "iteration": 0,
+      "kind": "pgd",
+      "loss": 5.4140625
+    },
+    {
+      "iteration": 1,
+      "kind": "pgd",
+      "loss": 4.015625
+    },
+    {
+      "iteration": 2,
+      "kind": "pgd",
+      "loss": 2.9765625
+    },
+    {
+      "iteration": 3,
+      "kind": "pgd",
+      "loss": 2.216796875
+    },
+    {
+      "iteration": 4,
+      "kind": "pgd",
+      "loss": 2.53125
+    },
+    {
+      "iteration": 5,
+      "kind": "pgd",
+      "loss": 1.8798828125
+    },
+    {
+      "iteration": 6,
+      "kind": "pgd",
+      "loss": 3.201171875
+    },
+    {
+      "iteration": 7,
+      "kind": "pgd",
+      "loss": 1.64453125
+    },
+    {
+      "iteration": 8,
+      "kind": "pgd",
+      "loss": 1.8134765625
+    },
+    {
+      "iteration": 9,
+      "kind": "pgd",
+      "loss": 2.2578125
+    },
+    {
+      "iteration": 10,
+      "kind": "pgd",
+      "loss": 2.759765625
+    },
+    {
+      "iteration": 11,
+      "kind": "pgd",
+      "loss": 1.7666015625
+    },
+    {
+      "iteration": 12,
+      "kind": "pgd",
+      "loss": 2.248046875
+    },
+    {
+      "iteration": 13,
+      "kind": "pgd",
+      "loss": 1.873046875
+    },
+    {
+      "iteration": 14,
+      "kind": "pgd",
+      "loss": 2.32421875
+    },
+    {
+      "iteration": 15,
+      "kind": "pgd",
+      "loss": 1.669921875
+    },
+    {
+      "iteration": 16,
+      "kind": "pgd",
+      "loss": 2.166015625
+    },
+    {
+      "iteration": 17,
+      "kind": "pgd",
+      "loss": 1.4599609375
+    },
+    {
+      "iteration": 18,
+      "kind": "pgd",
+      "loss": 2.345703125
+    },
+    {
+      "iteration": 19,
+      "kind": "pgd",
+      "loss": 1.279296875
+    },
+    {
+      "iteration": 20,
+      "kind": "pgd",
+      "loss": 2.19921875
+    },
+    {
+      "iteration": 21,
+      "kind": "pgd",
+      "loss": 1.2802734375
+    },
+    {
+      "iteration": 22,
+      "kind": "pgd",
+      "loss": 2.146484375
+    },
+    {
+      "iteration": 23,
+      "kind": "pgd",
+      "loss": 1.6328125
+    },
+    {
+      "iteration": 24,
+      "kind": "pgd",
+      "loss": 2.013671875
+    },
+    {
+      "iteration": 25,
+      "kind": "pgd",
+      "loss": 1.541015625
+    },
+    {
+      "iteration": 26,
+      "kind": "pgd",
+      "loss": 1.8837890625
+    },
+    {
+      "iteration": 27,
+      "kind": "pgd",
+      "loss": 1.6416015625
+    },
+    {
+      "iteration": 28,
+      "kind": "pgd",
+      "loss": 1.9501953125
+    },
+    {
+      "iteration": 29,
+      "kind": "pgd",
+      "loss": 1.345703125
+    },
+    {
+      "iteration": 30,
+      "kind": "final",
+      "loss": 1.9443359375
+    }
+  ],
+  "final_delta_linf_normalized": 0.062745101749897
+}

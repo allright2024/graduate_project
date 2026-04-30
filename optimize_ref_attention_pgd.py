@@ -30,7 +30,7 @@ python optimize_reference_attention_pgd.py \
   --target_step_index 0 \
   --layer_scope mid \
   --dtype float16 \
-  --pgd_steps 10 \
+  --pgd_steps 30 \
   --epsilon 8.0 \
   --alpha 1.0 \
   --output_dir ./pgd_ref_attention_out
@@ -41,12 +41,25 @@ from __future__ import annotations
 import argparse
 import json
 import math
+import os
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 import re
 
 import torch
 from PIL import Image
+
+from huggingface_hub import login, snapshot_download
+
+# Hugging Face 토큰 적용 및 모델 다운로드
+HF_TOKEN = "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"
+login(token=HF_TOKEN)
+
+if not os.path.exists("./ckpts/virtual_tryon.pth"):
+    print("[INFO] Checkpoints not found. Downloading from HuggingFace Hub...")
+    snapshot_download(repo_id="franciszzj/Leffa", local_dir="./ckpts", token=HF_TOKEN)
+else:
+    print("[INFO] Checkpoints found locally.")
 
 from leffa.model import LeffaModel, SkipAttnProcessor
 from leffa.transform import LeffaTransform
@@ -212,7 +225,11 @@ def install_reference_loss_processors(unet: torch.nn.Module, ctx: LossContext) -
     processors: Dict[str, torch.nn.Module] = {}
     for name, proc in unet.attn_processors.items():
         if name.endswith("attn1.processor"):
-            processors[name] = ReferenceLossAttnProcessor(name, ctx)
+            if ctx.should_record(name):
+                processors[name] = ReferenceLossAttnProcessor(name, ctx)
+            else:
+                # 타겟 레이어가 아닌 경우(고해상도 레이어 등) PyTorch 내장 FlashAttention을 그대로 사용하도록 원본 proc 유지
+                processors[name] = proc if proc is not None else SkipAttnProcessor()
         elif name.endswith("attn2.processor"):
             processors[name] = SkipAttnProcessor()
         else:
@@ -329,6 +346,10 @@ def collect_matched_pairs(ref_path: Path, mask_path: Path) -> List[Tuple[Path, P
             print(f"[WARN] {len(missing_masks)} ref images have no matching mask and will be skipped.")
         if missing_refs:
             print(f"[WARN] {len(missing_refs)} mask images have no matching ref and will be skipped.")
+            
+        # 30개의 이미지만 처리하도록 제한
+        common = common[:30]
+        
         return [(ref_files[name], mask_files[name]) for name in common]
     raise ValueError(
         "ref_image and cloth_mask_image must either both be files or both be directories."
@@ -515,6 +536,14 @@ def parse_args() -> argparse.Namespace:
         required=True,
         help="Path to a single cloth mask or a directory of cloth masks with matching filenames.",
     )
+    
+    # --- Compatibility Arguments ---
+    # These arguments are not used in optimize_ref_attention_pgd.py but are added
+    # so that you can run it with the exact same command as leffa_photoguard_pgd.py
+    parser.add_argument("--src_image", type=str, default=None, help="Ignored in this script.")
+    parser.add_argument("--model_mask_image", type=str, default=None, help="Ignored in this script.")
+    parser.add_argument("--densepose_image", type=str, default=None, help="Ignored in this script.")
+    # -------------------------------
     parser.add_argument("--target_timestep", type=int, default=None)
     parser.add_argument("--target_step_index", type=int, default=0)
     parser.add_argument(
