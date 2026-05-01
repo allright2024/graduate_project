@@ -153,21 +153,24 @@ def get_noise_prediction(
     num_inference_steps: int,
     guidance_scale: float,
     seed: int,
+    ref_image_latent: Optional[torch.Tensor] = None,
 ) -> torch.Tensor:
     device = module_device(model.vae)
     vae_dtype = next(model.vae.parameters()).dtype
 
     src_image = batch["src_image"].to(device=device, dtype=vae_dtype)
-    ref_image = batch["ref_image"].to(device=device, dtype=vae_dtype)
     mask = batch["mask"].to(device=device, dtype=vae_dtype)
     densepose = batch["densepose"].to(device=device, dtype=vae_dtype)
 
     masked_image = src_image * (mask < 0.5)
 
     masked_image_latent = model.vae.encode(masked_image).latent_dist.sample()
-    ref_image_latent = model.vae.encode(ref_image).latent_dist.sample()
     masked_image_latent = masked_image_latent * model.vae.config.scaling_factor
-    ref_image_latent = ref_image_latent * model.vae.config.scaling_factor
+
+    if ref_image_latent is None:
+        ref_image = batch["ref_image"].to(device=device, dtype=vae_dtype)
+        ref_image_latent = model.vae.encode(ref_image).latent_dist.sample()
+        ref_image_latent = ref_image_latent * model.vae.config.scaling_factor
 
     mask_latent = F.interpolate(mask, size=masked_image_latent.shape[-2:], mode="nearest")
     densepose_latent = F.interpolate(densepose, size=masked_image_latent.shape[-2:], mode="nearest")
@@ -304,17 +307,8 @@ def process_one_pair(args, model, paths, target_timestep, out_dir):
     batch, cloth_mask, target_tensor = prepare_batch_and_perturb_mask(args, paths, device)
     
     clean_ref = batch["ref_image"].detach().clone()
-    adv_ref = clean_ref.clone().detach()
 
-    eps = float(args.epsilon) * (2.0 / 255.0)
-    alpha = float(args.alpha) * (2.0 / 255.0)
-
-    if args.random_start:
-        delta = torch.empty_like(adv_ref).uniform_(-eps, eps)
-        delta = delta * cloth_mask
-        adv_ref = (clean_ref + delta).clamp(-1.0, 1.0)
-
-    # Calculate target noise prediction
+    # Pre-compute target_noise
     target_batch = dict(batch)
     target_batch["ref_image"] = target_tensor
     with torch.no_grad():
@@ -327,76 +321,105 @@ def process_one_pair(args, model, paths, target_timestep, out_dir):
             seed=args.seed,
         ).detach()
 
+    # Encode clean_ref once to latent space
+    with torch.no_grad():
+        vae_dtype = next(model.vae.parameters()).dtype
+        clean_ref_device = clean_ref.to(device=device, dtype=vae_dtype)
+        clean_latent = model.vae.encode(clean_ref_device).latent_dist.sample()
+        clean_latent = clean_latent * model.vae.config.scaling_factor
+        clean_latent = clean_latent.detach()
+
+    adv_latent = clean_latent.clone().detach()
+
+    # Resize cloth_mask to latent resolution (usually 1/8)
+    # cloth_mask has shape [1, 3, H, W]. We take just 1 channel to broadcast correctly with 4-channel latents.
+    latent_mask = F.interpolate(cloth_mask[:, :1, :, :], size=clean_latent.shape[-2:], mode="nearest")
+
+    # Apply epsilon and alpha directly to latent space
+    eps = float(args.epsilon) * (2.0 / 255.0) * model.vae.config.scaling_factor
+    alpha = float(args.alpha) * (2.0 / 255.0) * model.vae.config.scaling_factor
+
+    if args.random_start:
+        delta = torch.empty_like(adv_latent).uniform_(-eps, eps)
+        delta = delta * latent_mask
+        adv_latent = adv_latent + delta
+
     history: List[Dict[str, Any]] = []
 
     # Evaluate the clean image once.
-    clean_batch = dict(batch)
-    clean_batch["ref_image"] = clean_ref
     with torch.enable_grad():
         clean_noise = get_noise_prediction(
             model=model,
-            batch=clean_batch,
+            batch=batch,
             target_timestep=target_timestep,
             num_inference_steps=args.num_inference_steps,
             guidance_scale=args.guidance_scale,
             seed=args.seed,
+            ref_image_latent=clean_latent,
         )
         clean_loss = (clean_noise - target_noise).norm(p=2).item()
     history.append({"iteration": -1, "kind": "clean", "loss": clean_loss})
     print(f"[{paths['ref_image'].name}] [clean] loss={clean_loss:.6f}")
 
     for step in range(args.pgd_steps):
-        adv_ref = adv_ref.detach().clone().requires_grad_(True)
-        iter_batch = dict(batch)
-        iter_batch["ref_image"] = adv_ref
-
+        adv_latent = adv_latent.detach().clone().requires_grad_(True)
+        
         model.zero_grad(set_to_none=True)
         
         adv_noise = get_noise_prediction(
             model=model,
-            batch=iter_batch,
+            batch=batch,
             target_timestep=target_timestep,
             num_inference_steps=args.num_inference_steps,
             guidance_scale=args.guidance_scale,
             seed=args.seed,
+            ref_image_latent=adv_latent,
         )
         
         loss = (adv_noise - target_noise).norm(p=2)
         loss.backward()
 
-        grad = adv_ref.grad
+        grad = adv_latent.grad
         if grad is None:
-            raise RuntimeError("No gradient was produced for adv_ref.")
+            raise RuntimeError("No gradient was produced for adv_latent.")
 
         with torch.no_grad():
             signed = grad.sign()
             # Gradient descent to MINIMIZE the distance to target
-            adv_ref = adv_ref - alpha * signed * cloth_mask
-            delta = torch.clamp(adv_ref - clean_ref, min=-eps, max=eps)
-            delta = delta * cloth_mask
-            adv_ref = torch.clamp(clean_ref + delta, min=-1.0, max=1.0)
+            adv_latent = adv_latent - alpha * signed * latent_mask
+            delta = torch.clamp(adv_latent - clean_latent, min=-eps, max=eps)
+            delta = delta * latent_mask
+            adv_latent = clean_latent + delta
+            adv_latent = adv_latent.to(dtype=clean_latent.dtype)
 
         loss_val = float(loss.detach().cpu().item())
         history.append({"iteration": step, "kind": "pgd", "loss": loss_val})
         if (step+1) % 10 == 0 or step == 0:
             print(f"[{paths['ref_image'].name}] [iter {step:03d}] loss={loss_val:.6f}")
 
-    # Final evaluation on the optimized image.
-    final_batch = dict(batch)
-    final_batch["ref_image"] = adv_ref.detach()
+    # Final evaluation on the optimized latent.
     with torch.enable_grad():
         final_noise = get_noise_prediction(
             model=model,
-            batch=final_batch,
+            batch=batch,
             target_timestep=target_timestep,
             num_inference_steps=args.num_inference_steps,
             guidance_scale=args.guidance_scale,
             seed=args.seed,
+            ref_image_latent=adv_latent.detach(),
         )
         final_loss = (final_noise - target_noise).norm(p=2).item()
     history.append({"iteration": args.pgd_steps, "kind": "final", "loss": final_loss})
 
     out_dir.mkdir(parents=True, exist_ok=True)
+
+    # Decode latent back to pixel space
+    with torch.no_grad():
+        adv_ref_decoded = model.vae.decode(adv_latent.detach() / model.vae.config.scaling_factor).sample
+        adv_ref_decoded = torch.clamp(adv_ref_decoded, -1.0, 1.0)
+        
+        # Blend the decoded image with the original clean_ref using the original pixel-space mask
+        adv_ref = clean_ref * (1.0 - cloth_mask) + adv_ref_decoded * cloth_mask
 
     adv_pil = tensor_to_pil(adv_ref.detach())
     delta_pil = delta_to_pil((adv_ref.detach() - clean_ref).detach(), scale=max(args.epsilon, 1.0))

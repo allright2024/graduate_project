@@ -1,0 +1,757 @@
+{
+  "config": {
+    "pretrained_model_name_or_path": "runwayml/stable-diffusion-inpainting",
+    "pretrained_model": "./ckpts/virtual_tryon.pth",
+    "ref_image": "/workspace/vton/train/cloth/00010_00.jpg",
+    "cloth_mask_image": "/workspace/vton/train/cloth-mask/00010_00.jpg",
+    "target_timestep": 981,
+    "target_step_index": 0,
+    "num_inference_steps": 50,
+    "layer_scope": "mid",
+    "layer_substr": null,
+    "dtype": "float16",
+    "pgd_steps": 30,
+    "epsilon_pixels": 8.0,
+    "alpha_pixels": 1.0,
+    "random_start": false
+  },
+  "history": [
+    {
+      "iteration": -1,
+      "kind": "clean",
+      "target_timestep": 981,
+      "summary": {
+        "total": 8.05163288116455,
+        "layers": [
+          {
+            "layer_name": "mid_block.attentions.0.transformer_blocks.0.attn1.processor",
+            "l2": 8.05163288116455,
+            "shape": [
+              2,
+              8,
+              192,
+              192
+            ]
+          }
+        ]
+      },
+      "reduced": {
+        "reference_self": 8.05163288116455
+      }
+    },
+    {
+      "iteration": 0,
+      "kind": "pgd",
+      "target_timestep": 981,
+      "summary": {
+        "total": 8.051543235778809,
+        "layers": [
+          {
+            "layer_name": "mid_block.attentions.0.transformer_blocks.0.attn1.processor",
+            "l2": 8.051543235778809,
+            "shape": [
+              2,
+              8,
+              192,
+              192
+            ]
+          }
+        ]
+      },
+      "reduced": {
+        "reference_self": 8.051543235778809
+      }
+    },
+    {
+      "iteration": 1,
+      "kind": "pgd",
+      "target_timestep": 981,
+      "summary": {
+        "total": 6.876628398895264,
+        "layers": [
+          {
+            "layer_name": "mid_block.attentions.0.transformer_blocks.0.attn1.processor",
+            "l2": 6.876628398895264,
+            "shape": [
+              2,
+              8,
+              192,
+              192
+            ]
+          }
+        ]
+      },
+      "reduced": {
+        "reference_self": 6.876628398895264
+      }
+    },
+    {
+      "iteration": 2,
+      "kind": "pgd",
+      "target_timestep": 981,
+      "summary": {
+        "total": 6.281501293182373,
+        "layers": [
+          {
+            "layer_name": "mid_block.attentions.0.transformer_blocks.0.attn1.processor",
+            "l2": 6.281501293182373,
+            "shape": [
+              2,
+              8,
+              192,
+              192
+            ]
+          }
+        ]
+      },
+      "reduced": {
+        "reference_self": 6.281501293182373
+      }
+    },
+    {
+      "iteration": 3,
+      "kind": "pgd",
+      "target_timestep": 981,
+      "summary": {
+        "total": 5.783126354217529,
+        "layers": [
+          {
+            "layer_name": "mid_block.attentions.0.transformer_blocks.0.attn1.processor",
+            "l2": 5.783126354217529,
+            "shape": [
+              2,
+              8,
+              192,
+              192
+            ]
+          }
+        ]
+      },
+      "reduced": {
+        "reference_self": 5.783126354217529
+      }
+    },
+    {
+      "iteration": 4,
+      "kind": "pgd",
+      "target_timestep": 981,
+      "summary": {
+        "total": 5.3198418617248535,
+        "layers": [
+          {
+            "layer_name": "mid_block.attentions.0.transformer_blocks.0.attn1.processor",
+            "l2": 5.3198418617248535,
+            "shape": [
+              2,
+              8,
+              192,
+              192
+            ]
+          }
+        ]
+      },
+      "reduced": {
+        "reference_self": 5.3198418617248535
+      }
+    },
+    {
+      "iteration": 5,
+      "kind": "pgd",
+      "target_timestep": 981,
+      "summary": {
+        "total": 5.173888206481934,
+        "layers": [
+          {
+            "layer_name": "mid_block.attentions.0.transformer_blocks.0.attn1.processor",
+            "l2": 5.173888206481934,
+            "shape": [
+              2,
+              8,
+              192,
+              192
+            ]
+          }
+        ]
+      },
+      "reduced": {
+        "reference_self": 5.173888206481934
+      }
+    },
+    {
+      "iteration": 6,
+      "kind": "pgd",
+      "target_timestep": 981,
+      "summary": {
+        "total": 5.0693745613098145,
+        "layers": [
+          {
+            "layer_name": "mid_block.attentions.0.transformer_blocks.0.attn1.processor",
+            "l2": 5.0693745613098145,
+            "shape": [
+              2,
+              8,
+              192,
+              192
+            ]
+          }
+        ]
+      },
+      "reduced": {
+        "reference_self": 5.0693745613098145
+      }
+    },
+    {
+      "iteration": 7,
+      "kind": "pgd",
+      "target_timestep": 981,
+      "summary": {
+        "total": 5.028862476348877,
+        "layers": [
+          {
+            "layer_name": "mid_block.attentions.0.transformer_blocks.0.attn1.processor",
+            "l2": 5.028862476348877,
+            "shape": [
+              2,
+              8,
+              192,
+              192
+            ]
+          }
+        ]
+      },
+      "reduced": {
+        "reference_self": 5.028862476348877
+      }
+    },
+    {
+      "iteration": 8,
+      "kind": "pgd",
+      "target_timestep": 981,
+      "summary": {
+        "total": 4.837464809417725,
+        "layers": [
+          {
+            "layer_name": "mid_block.attentions.0.transformer_blocks.0.attn1.processor",
+            "l2": 4.837464809417725,
+            "shape": [
+              2,
+              8,
+              192,
+              192
+            ]
+          }
+        ]
+      },
+      "reduced": {
+        "reference_self": 4.837464809417725
+      }
+    },
+    {
+      "iteration": 9,
+      "kind": "pgd",
+      "target_timestep": 981,
+      "summary": {
+        "total": 4.805609703063965,
+        "layers": [
+          {
+            "layer_name": "mid_block.attentions.0.transformer_blocks.0.attn1.processor",
+            "l2": 4.805609703063965,
+            "shape": [
+              2,
+              8,
+              192,
+              192
+            ]
+          }
+        ]
+      },
+      "reduced": {
+        "reference_self": 4.805609703063965
+      }
+    },
+    {
+      "iteration": 10,
+      "kind": "pgd",
+      "target_timestep": 981,
+      "summary": {
+        "total": 4.7875142097473145,
+        "layers": [
+          {
+            "layer_name": "mid_block.attentions.0.transformer_blocks.0.attn1.processor",
+            "l2": 4.7875142097473145,
+            "shape": [
+              2,
+              8,
+              192,
+              192
+            ]
+          }
+        ]
+      },
+      "reduced": {
+        "reference_self": 4.7875142097473145
+      }
+    },
+    {
+      "iteration": 11,
+      "kind": "pgd",
+      "target_timestep": 981,
+      "summary": {
+        "total": 4.745650291442871,
+        "layers": [
+          {
+            "layer_name": "mid_block.attentions.0.transformer_blocks.0.attn1.processor",
+            "l2": 4.745650291442871,
+            "shape": [
+              2,
+              8,
+              192,
+              192
+            ]
+          }
+        ]
+      },
+      "reduced": {
+        "reference_self": 4.745650291442871
+      }
+    },
+    {
+      "iteration": 12,
+      "kind": "pgd",
+      "target_timestep": 981,
+      "summary": {
+        "total": 4.6941728591918945,
+        "layers": [
+          {
+            "layer_name": "mid_block.attentions.0.transformer_blocks.0.attn1.processor",
+            "l2": 4.6941728591918945,
+            "shape": [
+              2,
+              8,
+              192,
+              192
+            ]
+          }
+        ]
+      },
+      "reduced": {
+        "reference_self": 4.6941728591918945
+      }
+    },
+    {
+      "iteration": 13,
+      "kind": "pgd",
+      "target_timestep": 981,
+      "summary": {
+        "total": 4.643238067626953,
+        "layers": [
+          {
+            "layer_name": "mid_block.attentions.0.transformer_blocks.0.attn1.processor",
+            "l2": 4.643238067626953,
+            "shape": [
+              2,
+              8,
+              192,
+              192
+            ]
+          }
+        ]
+      },
+      "reduced": {
+        "reference_self": 4.643238067626953
+      }
+    },
+    {
+      "iteration": 14,
+      "kind": "pgd",
+      "target_timestep": 981,
+      "summary": {
+        "total": 4.647493362426758,
+        "layers": [
+          {
+            "layer_name": "mid_block.attentions.0.transformer_blocks.0.attn1.processor",
+            "l2": 4.647493362426758,
+            "shape": [
+              2,
+              8,
+              192,
+              192
+            ]
+          }
+        ]
+      },
+      "reduced": {
+        "reference_self": 4.647493362426758
+      }
+    },
+    {
+      "iteration": 15,
+      "kind": "pgd",
+      "target_timestep": 981,
+      "summary": {
+        "total": 4.6157612800598145,
+        "layers": [
+          {
+            "layer_name": "mid_block.attentions.0.transformer_blocks.0.attn1.processor",
+            "l2": 4.6157612800598145,
+            "shape": [
+              2,
+              8,
+              192,
+              192
+            ]
+          }
+        ]
+      },
+      "reduced": {
+        "reference_self": 4.6157612800598145
+      }
+    },
+    {
+      "iteration": 16,
+      "kind": "pgd",
+      "target_timestep": 981,
+      "summary": {
+        "total": 4.599959850311279,
+        "layers": [
+          {
+            "layer_name": "mid_block.attentions.0.transformer_blocks.0.attn1.processor",
+            "l2": 4.599959850311279,
+            "shape": [
+              2,
+              8,
+              192,
+              192
+            ]
+          }
+        ]
+      },
+      "reduced": {
+        "reference_self": 4.599959850311279
+      }
+    },
+    {
+      "iteration": 17,
+      "kind": "pgd",
+      "target_timestep": 981,
+      "summary": {
+        "total": 4.58598518371582,
+        "layers": [
+          {
+            "layer_name": "mid_block.attentions.0.transformer_blocks.0.attn1.processor",
+            "l2": 4.58598518371582,
+            "shape": [
+              2,
+              8,
+              192,
+              192
+            ]
+          }
+        ]
+      },
+      "reduced": {
+        "reference_self": 4.58598518371582
+      }
+    },
+    {
+      "iteration": 18,
+      "kind": "pgd",
+      "target_timestep": 981,
+      "summary": {
+        "total": 4.611140727996826,
+        "layers": [
+          {
+            "layer_name": "mid_block.attentions.0.transformer_blocks.0.attn1.processor",
+            "l2": 4.611140727996826,
+            "shape": [
+              2,
+              8,
+              192,
+              192
+            ]
+          }
+        ]
+      },
+      "reduced": {
+        "reference_self": 4.611140727996826
+      }
+    },
+    {
+      "iteration": 19,
+      "kind": "pgd",
+      "target_timestep": 981,
+      "summary": {
+        "total": 4.553962707519531,
+        "layers": [
+          {
+            "layer_name": "mid_block.attentions.0.transformer_blocks.0.attn1.processor",
+            "l2": 4.553962707519531,
+            "shape": [
+              2,
+              8,
+              192,
+              192
+            ]
+          }
+        ]
+      },
+      "reduced": {
+        "reference_self": 4.553962707519531
+      }
+    },
+    {
+      "iteration": 20,
+      "kind": "pgd",
+      "target_timestep": 981,
+      "summary": {
+        "total": 4.5727105140686035,
+        "layers": [
+          {
+            "layer_name": "mid_block.attentions.0.transformer_blocks.0.attn1.processor",
+            "l2": 4.5727105140686035,
+            "shape": [
+              2,
+              8,
+              192,
+              192
+            ]
+          }
+        ]
+      },
+      "reduced": {
+        "reference_self": 4.5727105140686035
+      }
+    },
+    {
+      "iteration": 21,
+      "kind": "pgd",
+      "target_timestep": 981,
+      "summary": {
+        "total": 4.529977321624756,
+        "layers": [
+          {
+            "layer_name": "mid_block.attentions.0.transformer_blocks.0.attn1.processor",
+            "l2": 4.529977321624756,
+            "shape": [
+              2,
+              8,
+              192,
+              192
+            ]
+          }
+        ]
+      },
+      "reduced": {
+        "reference_self": 4.529977321624756
+      }
+    },
+    {
+      "iteration": 22,
+      "kind": "pgd",
+      "target_timestep": 981,
+      "summary": {
+        "total": 4.565147876739502,
+        "layers": [
+          {
+            "layer_name": "mid_block.attentions.0.transformer_blocks.0.attn1.processor",
+            "l2": 4.565147876739502,
+            "shape": [
+              2,
+              8,
+              192,
+              192
+            ]
+          }
+        ]
+      },
+      "reduced": {
+        "reference_self": 4.565147876739502
+      }
+    },
+    {
+      "iteration": 23,
+      "kind": "pgd",
+      "target_timestep": 981,
+      "summary": {
+        "total": 4.514063835144043,
+        "layers": [
+          {
+            "layer_name": "mid_block.attentions.0.transformer_blocks.0.attn1.processor",
+            "l2": 4.514063835144043,
+            "shape": [
+              2,
+              8,
+              192,
+              192
+            ]
+          }
+        ]
+      },
+      "reduced": {
+        "reference_self": 4.514063835144043
+      }
+    },
+    {
+      "iteration": 24,
+      "kind": "pgd",
+      "target_timestep": 981,
+      "summary": {
+        "total": 4.546261787414551,
+        "layers": [
+          {
+            "layer_name": "mid_block.attentions.0.transformer_blocks.0.attn1.processor",
+            "l2": 4.546261787414551,
+            "shape": [
+              2,
+              8,
+              192,
+              192
+            ]
+          }
+        ]
+      },
+      "reduced": {
+        "reference_self": 4.546261787414551
+      }
+    },
+    {
+      "iteration": 25,
+      "kind": "pgd",
+      "target_timestep": 981,
+      "summary": {
+        "total": 4.5098676681518555,
+        "layers": [
+          {
+            "layer_name": "mid_block.attentions.0.transformer_blocks.0.attn1.processor",
+            "l2": 4.5098676681518555,
+            "shape": [
+              2,
+              8,
+              192,
+              192
+            ]
+          }
+        ]
+      },
+      "reduced": {
+        "reference_self": 4.5098676681518555
+      }
+    },
+    {
+      "iteration": 26,
+      "kind": "pgd",
+      "target_timestep": 981,
+      "summary": {
+        "total": 4.502594470977783,
+        "layers": [
+          {
+            "layer_name": "mid_block.attentions.0.transformer_blocks.0.attn1.processor",
+            "l2": 4.502594470977783,
+            "shape": [
+              2,
+              8,
+              192,
+              192
+            ]
+          }
+        ]
+      },
+      "reduced": {
+        "reference_self": 4.502594470977783
+      }
+    },
+    {
+      "iteration": 27,
+      "kind": "pgd",
+      "target_timestep": 981,
+      "summary": {
+        "total": 4.5063323974609375,
+        "layers": [
+          {
+            "layer_name": "mid_block.attentions.0.transformer_blocks.0.attn1.processor",
+            "l2": 4.5063323974609375,
+            "shape": [
+              2,
+              8,
+              192,
+              192
+            ]
+          }
+        ]
+      },
+      "reduced": {
+        "reference_self": 4.5063323974609375
+      }
+    },
+    {
+      "iteration": 28,
+      "kind": "pgd",
+      "target_timestep": 981,
+      "summary": {
+        "total": 4.49986457824707,
+        "layers": [
+          {
+            "layer_name": "mid_block.attentions.0.transformer_blocks.0.attn1.processor",
+            "l2": 4.49986457824707,
+            "shape": [
+              2,
+              8,
+              192,
+              192
+            ]
+          }
+        ]
+      },
+      "reduced": {
+        "reference_self": 4.49986457824707
+      }
+    },
+    {
+      "iteration": 29,
+      "kind": "pgd",
+      "target_timestep": 981,
+      "summary": {
+        "total": 4.495156764984131,
+        "layers": [
+          {
+            "layer_name": "mid_block.attentions.0.transformer_blocks.0.attn1.processor",
+            "l2": 4.495156764984131,
+            "shape": [
+              2,
+              8,
+              192,
+              192
+            ]
+          }
+        ]
+      },
+      "reduced": {
+        "reference_self": 4.495156764984131
+      }
+    },
+    {
+      "iteration": 30,
+      "kind": "final",
+      "target_timestep": 981,
+      "summary": {
+        "total": 4.4917755126953125,
+        "layers": [
+          {
+            "layer_name": "mid_block.attentions.0.transformer_blocks.0.attn1.processor",
+            "l2": 4.4917755126953125,
+            "shape": [
+              2,
+              8,
+              192,
+              192
+            ]
+          }
+        ]
+      },
+      "reduced": {
+        "reference_self": 4.4917755126953125
+      }
+    }
+  ],
+  "final_delta_linf_normalized": 0.06298828125
+}

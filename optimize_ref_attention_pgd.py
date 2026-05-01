@@ -225,11 +225,7 @@ def install_reference_loss_processors(unet: torch.nn.Module, ctx: LossContext) -
     processors: Dict[str, torch.nn.Module] = {}
     for name, proc in unet.attn_processors.items():
         if name.endswith("attn1.processor"):
-            if ctx.should_record(name):
-                processors[name] = ReferenceLossAttnProcessor(name, ctx)
-            else:
-                # 타겟 레이어가 아닌 경우(고해상도 레이어 등) PyTorch 내장 FlashAttention을 그대로 사용하도록 원본 proc 유지
-                processors[name] = proc if proc is not None else SkipAttnProcessor()
+            processors[name] = ReferenceLossAttnProcessor(name, ctx)
         elif name.endswith("attn2.processor"):
             processors[name] = SkipAttnProcessor()
         else:

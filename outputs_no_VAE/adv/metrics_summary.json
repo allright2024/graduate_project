@@ -1,0 +1,226 @@
+{
+  "clean_dir": "/workspace/graduate_project/outputs_no_VAE/clean",
+  "adv_dir": "/workspace/graduate_project/outputs_no_VAE/adv",
+  "num_clean_images": 30,
+  "num_adv_images": 30,
+  "num_matched_images": 30,
+  "num_valid_pairs": 30,
+  "num_skipped_pairs": 0,
+  "mean_ssim": 0.948865588944134,
+  "mean_psnr": 29.053663865714228,
+  "clean_only": [],
+  "adv_only": [],
+  "per_image": [
+    {
+      "image": "00000_00.jpg",
+      "ssim": 0.9152630877990747,
+      "psnr": 19.056133294081043,
+      "clean_path": "/workspace/graduate_project/outputs_no_VAE/clean/00000_00.jpg",
+      "adv_path": "/workspace/graduate_project/outputs_no_VAE/adv/00000_00.jpg"
+    },
+    {
+      "image": "00001_00.jpg",
+      "ssim": 0.9337188320308353,
+      "psnr": 22.450838123263942,
+      "clean_path": "/workspace/graduate_project/outputs_no_VAE/clean/00001_00.jpg",
+      "adv_path": "/workspace/graduate_project/outputs_no_VAE/adv/00001_00.jpg"
+    },
+    {
+      "image": "00002_00.jpg",
+      "ssim": 0.9727332481437102,
+      "psnr": 33.85544561535199,
+      "clean_path": "/workspace/graduate_project/outputs_no_VAE/clean/00002_00.jpg",
+      "adv_path": "/workspace/graduate_project/outputs_no_VAE/adv/00002_00.jpg"
+    },
+    {
+      "image": "00003_00.jpg",
+      "ssim": 0.9657209667200632,
+      "psnr": 28.380894861157024,
+      "clean_path": "/workspace/graduate_project/outputs_no_VAE/clean/00003_00.jpg",
+      "adv_path": "/workspace/graduate_project/outputs_no_VAE/adv/00003_00.jpg"
+    },
+    {
+      "image": "00005_00.jpg",
+      "ssim": 0.9525195296749209,
+      "psnr": 29.7726213862552,
+      "clean_path": "/workspace/graduate_project/outputs_no_VAE/clean/00005_00.jpg",
+      "adv_path": "/workspace/graduate_project/outputs_no_VAE/adv/00005_00.jpg"
+    },
+    {
+      "image": "00007_00.jpg",
+      "ssim": 0.9703221819775258,
+      "psnr": 35.202750101665046,
+      "clean_path": "/workspace/graduate_project/outputs_no_VAE/clean/00007_00.jpg",
+      "adv_path": "/workspace/graduate_project/outputs_no_VAE/adv/00007_00.jpg"
+    },
+    {
+      "image": "00009_00.jpg",
+      "ssim": 0.9856904566141118,
+      "psnr": 33.622850229339946,
+      "clean_path": "/workspace/graduate_project/outputs_no_VAE/clean/00009_00.jpg",
+      "adv_path": "/workspace/graduate_project/outputs_no_VAE/adv/00009_00.jpg"
+    },
+    {
+      "image": "00010_00.jpg",
+      "ssim": 0.9664927031516948,
+      "psnr": 24.5096447297089,
+      "clean_path": "/workspace/graduate_project/outputs_no_VAE/clean/00010_00.jpg",
+      "adv_path": "/workspace/graduate_project/outputs_no_VAE/adv/00010_00.jpg"
+    },
+    {
+      "image": "00011_00.jpg",
+      "ssim": 0.9840369243213294,
+      "psnr": 32.44860522908758,
+      "clean_path": "/workspace/graduate_project/outputs_no_VAE/clean/00011_00.jpg",
+      "adv_path": "/workspace/graduate_project/outputs_no_VAE/adv/00011_00.jpg"
+    },
+    {
+      "image": "00012_00.jpg",
+      "ssim": 0.9449053697450741,
+      "psnr": 21.985883335339274,
+      "clean_path": "/workspace/graduate_project/outputs_no_VAE/clean/00012_00.jpg",
+      "adv_path": "/workspace/graduate_project/outputs_no_VAE/adv/00012_00.jpg"
+    },
+    {
+      "image": "00014_00.jpg",
+      "ssim": 0.9612574066569407,
+      "psnr": 28.313360139234184,
+      "clean_path": "/workspace/graduate_project/outputs_no_VAE/clean/00014_00.jpg",
+      "adv_path": "/workspace/graduate_project/outputs_no_VAE/adv/00014_00.jpg"
+    },
+    {
+      "image": "00015_00.jpg",
+      "ssim": 0.9266314365726416,
+      "psnr": 32.49927614651313,
+      "clean_path": "/workspace/graduate_project/outputs_no_VAE/clean/00015_00.jpg",
+      "adv_path": "/workspace/graduate_project/outputs_no_VAE/adv/00015_00.jpg"
+    },
+    {
+      "image": "00016_00.jpg",
+      "ssim": 0.9233864843274543,
+      "psnr": 22.63724102222359,
+      "clean_path": "/workspace/graduate_project/outputs_no_VAE/clean/00016_00.jpg",
+      "adv_path": "/workspace/graduate_project/outputs_no_VAE/adv/00016_00.jpg"
+    },
+    {
+      "image": "00018_00.jpg",
+      "ssim": 0.9622072201236164,
+      "psnr": 32.86990940413987,
+      "clean_path": "/workspace/graduate_project/outputs_no_VAE/clean/00018_00.jpg",
+      "adv_path": "/workspace/graduate_project/outputs_no_VAE/adv/00018_00.jpg"
+    },
+    {
+      "image": "00019_00.jpg",
+      "ssim": 0.9714468857229602,
+      "psnr": 28.182918927632112,
+      "clean_path": "/workspace/graduate_project/outputs_no_VAE/clean/00019_00.jpg",
+      "adv_path": "/workspace/graduate_project/outputs_no_VAE/adv/00019_00.jpg"
+    },
+    {
+      "image": "00022_00.jpg",
+      "ssim": 0.9605915420599441,
+      "psnr": 24.706416923292327,
+      "clean_path": "/workspace/graduate_project/outputs_no_VAE/clean/00022_00.jpg",
+      "adv_path": "/workspace/graduate_project/outputs_no_VAE/adv/00022_00.jpg"
+    },
+    {
+      "image": "00023_00.jpg",
+      "ssim": 0.879705951508102,
+      "psnr": 24.467083649634827,
+      "clean_path": "/workspace/graduate_project/outputs_no_VAE/clean/00023_00.jpg",
+      "adv_path": "/workspace/graduate_project/outputs_no_VAE/adv/00023_00.jpg"
+    },
+    {
+      "image": "00024_00.jpg",
+      "ssim": 0.9672690691358135,
+      "psnr": 35.279142344460354,
+      "clean_path": "/workspace/graduate_project/outputs_no_VAE/clean/00024_00.jpg",
+      "adv_path": "/workspace/graduate_project/outputs_no_VAE/adv/00024_00.jpg"
+    },
+    {
+      "image": "00025_00.jpg",
+      "ssim": 0.910589057286042,
+      "psnr": 29.216514882871326,
+      "clean_path": "/workspace/graduate_project/outputs_no_VAE/clean/00025_00.jpg",
+      "adv_path": "/workspace/graduate_project/outputs_no_VAE/adv/00025_00.jpg"
+    },
+    {
+      "image": "00026_00.jpg",
+      "ssim": 0.9694780402611185,
+      "psnr": 29.88891757854895,
+      "clean_path": "/workspace/graduate_project/outputs_no_VAE/clean/00026_00.jpg",
+      "adv_path": "/workspace/graduate_project/outputs_no_VAE/adv/00026_00.jpg"
+    },
+    {
+      "image": "00028_00.jpg",
+      "ssim": 0.9773125741496842,
+      "psnr": 32.30825479568039,
+      "clean_path": "/workspace/graduate_project/outputs_no_VAE/clean/00028_00.jpg",
+      "adv_path": "/workspace/graduate_project/outputs_no_VAE/adv/00028_00.jpg"
+    },
+    {
+      "image": "00029_00.jpg",
+      "ssim": 0.971324246713988,
+      "psnr": 31.53772302374318,
+      "clean_path": "/workspace/graduate_project/outputs_no_VAE/clean/00029_00.jpg",
+      "adv_path": "/workspace/graduate_project/outputs_no_VAE/adv/00029_00.jpg"
+    },
+    {
+      "image": "00030_00.jpg",
+      "ssim": 0.9679285032785591,
+      "psnr": 26.84909827375531,
+      "clean_path": "/workspace/graduate_project/outputs_no_VAE/clean/00030_00.jpg",
+      "adv_path": "/workspace/graduate_project/outputs_no_VAE/adv/00030_00.jpg"
+    },
+    {
+      "image": "00031_00.jpg",
+      "ssim": 0.960980365069574,
+      "psnr": 33.06452659237678,
+      "clean_path": "/workspace/graduate_project/outputs_no_VAE/clean/00031_00.jpg",
+      "adv_path": "/workspace/graduate_project/outputs_no_VAE/adv/00031_00.jpg"
+    },
+    {
+      "image": "00032_00.jpg",
+      "ssim": 0.9008101425062542,
+      "psnr": 25.32180847623269,
+      "clean_path": "/workspace/graduate_project/outputs_no_VAE/clean/00032_00.jpg",
+      "adv_path": "/workspace/graduate_project/outputs_no_VAE/adv/00032_00.jpg"
+    },
+    {
+      "image": "00033_00.jpg",
+      "ssim": 0.8719750944331529,
+      "psnr": 25.62971087868881,
+      "clean_path": "/workspace/graduate_project/outputs_no_VAE/clean/00033_00.jpg",
+      "adv_path": "/workspace/graduate_project/outputs_no_VAE/adv/00033_00.jpg"
+    },
+    {
+      "image": "00036_00.jpg",
+      "ssim": 0.9572876133478214,
+      "psnr": 32.66010358100307,
+      "clean_path": "/workspace/graduate_project/outputs_no_VAE/clean/00036_00.jpg",
+      "adv_path": "/workspace/graduate_project/outputs_no_VAE/adv/00036_00.jpg"
+    },
+    {
+      "image": "00038_00.jpg",
+      "ssim": 0.9663003635527692,
+      "psnr": 30.30490175376086,
+      "clean_path": "/workspace/graduate_project/outputs_no_VAE/clean/00038_00.jpg",
+      "adv_path": "/workspace/graduate_project/outputs_no_VAE/adv/00038_00.jpg"
+    },
+    {
+      "image": "00040_00.jpg",
+      "ssim": 0.8918549547370042,
+      "psnr": 30.662827155946687,
+      "clean_path": "/workspace/graduate_project/outputs_no_VAE/clean/00040_00.jpg",
+      "adv_path": "/workspace/graduate_project/outputs_no_VAE/adv/00040_00.jpg"
+    },
+    {
+      "image": "00041_00.jpg",
+      "ssim": 0.9762274167022406,
+      "psnr": 33.92451351643836,
+      "clean_path": "/workspace/graduate_project/outputs_no_VAE/clean/00041_00.jpg",
+      "adv_path": "/workspace/graduate_project/outputs_no_VAE/adv/00041_00.jpg"
+    }
+  ],
+  "skipped": []
+}

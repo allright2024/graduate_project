@@ -1,0 +1,221 @@
+{
+  "root": "/workspace/graduate_project/leffa_photoguard_out",
+  "num_sample_dirs": 30,
+  "num_valid_samples": 30,
+  "num_skipped_samples": 0,
+  "mean_ssim": 0.9256361208415614,
+  "mean_psnr": 38.537020911142136,
+  "per_sample": [
+    {
+      "sample": "00000_00",
+      "ssim": 0.9185237624032468,
+      "psnr": 39.27352344915774,
+      "clean_path": "/workspace/graduate_project/leffa_photoguard_out/00000_00/cloth_clean.png",
+      "adv_path": "/workspace/graduate_project/leffa_photoguard_out/00000_00/cloth_adv.png"
+    },
+    {
+      "sample": "00001_00",
+      "ssim": 0.9032432064693873,
+      "psnr": 38.65301444220179,
+      "clean_path": "/workspace/graduate_project/leffa_photoguard_out/00001_00/cloth_clean.png",
+      "adv_path": "/workspace/graduate_project/leffa_photoguard_out/00001_00/cloth_adv.png"
+    },
+    {
+      "sample": "00002_00",
+      "ssim": 0.8933700997365491,
+      "psnr": 38.376045940306504,
+      "clean_path": "/workspace/graduate_project/leffa_photoguard_out/00002_00/cloth_clean.png",
+      "adv_path": "/workspace/graduate_project/leffa_photoguard_out/00002_00/cloth_adv.png"
+    },
+    {
+      "sample": "00003_00",
+      "ssim": 0.9096688666850993,
+      "psnr": 39.017365322285826,
+      "clean_path": "/workspace/graduate_project/leffa_photoguard_out/00003_00/cloth_clean.png",
+      "adv_path": "/workspace/graduate_project/leffa_photoguard_out/00003_00/cloth_adv.png"
+    },
+    {
+      "sample": "00005_00",
+      "ssim": 0.9134385577923942,
+      "psnr": 39.159869202010526,
+      "clean_path": "/workspace/graduate_project/leffa_photoguard_out/00005_00/cloth_clean.png",
+      "adv_path": "/workspace/graduate_project/leffa_photoguard_out/00005_00/cloth_adv.png"
+    },
+    {
+      "sample": "00007_00",
+      "ssim": 0.9081404913639729,
+      "psnr": 38.41395299781383,
+      "clean_path": "/workspace/graduate_project/leffa_photoguard_out/00007_00/cloth_clean.png",
+      "adv_path": "/workspace/graduate_project/leffa_photoguard_out/00007_00/cloth_adv.png"
+    },
+    {
+      "sample": "00009_00",
+      "ssim": 0.9202321540721102,
+      "psnr": 39.503490914143306,
+      "clean_path": "/workspace/graduate_project/leffa_photoguard_out/00009_00/cloth_clean.png",
+      "adv_path": "/workspace/graduate_project/leffa_photoguard_out/00009_00/cloth_adv.png"
+    },
+    {
+      "sample": "00010_00",
+      "ssim": 0.9207156146637727,
+      "psnr": 39.504780903113314,
+      "clean_path": "/workspace/graduate_project/leffa_photoguard_out/00010_00/cloth_clean.png",
+      "adv_path": "/workspace/graduate_project/leffa_photoguard_out/00010_00/cloth_adv.png"
+    },
+    {
+      "sample": "00011_00",
+      "ssim": 0.9084120103552483,
+      "psnr": 38.90686579259211,
+      "clean_path": "/workspace/graduate_project/leffa_photoguard_out/00011_00/cloth_clean.png",
+      "adv_path": "/workspace/graduate_project/leffa_photoguard_out/00011_00/cloth_adv.png"
+    },
+    {
+      "sample": "00012_00",
+      "ssim": 0.8849615113297706,
+      "psnr": 37.7997121656641,
+      "clean_path": "/workspace/graduate_project/leffa_photoguard_out/00012_00/cloth_clean.png",
+      "adv_path": "/workspace/graduate_project/leffa_photoguard_out/00012_00/cloth_adv.png"
+    },
+    {
+      "sample": "00014_00",
+      "ssim": 0.9170090695060575,
+      "psnr": 38.792059883768644,
+      "clean_path": "/workspace/graduate_project/leffa_photoguard_out/00014_00/cloth_clean.png",
+      "adv_path": "/workspace/graduate_project/leffa_photoguard_out/00014_00/cloth_adv.png"
+    },
+    {
+      "sample": "00015_00",
+      "ssim": 0.9402132352287521,
+      "psnr": 38.323835363926236,
+      "clean_path": "/workspace/graduate_project/leffa_photoguard_out/00015_00/cloth_clean.png",
+      "adv_path": "/workspace/graduate_project/leffa_photoguard_out/00015_00/cloth_adv.png"
+    },
+    {
+      "sample": "00016_00",
+      "ssim": 0.9760927300445315,
+      "psnr": 37.37931954927322,
+      "clean_path": "/workspace/graduate_project/leffa_photoguard_out/00016_00/cloth_clean.png",
+      "adv_path": "/workspace/graduate_project/leffa_photoguard_out/00016_00/cloth_adv.png"
+    },
+    {
+      "sample": "00018_00",
+      "ssim": 0.9061488959169628,
+      "psnr": 38.40938097401387,
+      "clean_path": "/workspace/graduate_project/leffa_photoguard_out/00018_00/cloth_clean.png",
+      "adv_path": "/workspace/graduate_project/leffa_photoguard_out/00018_00/cloth_adv.png"
+    },
+    {
+      "sample": "00019_00",
+      "ssim": 0.9031570579312002,
+      "psnr": 38.588829528796495,
+      "clean_path": "/workspace/graduate_project/leffa_photoguard_out/00019_00/cloth_clean.png",
+      "adv_path": "/workspace/graduate_project/leffa_photoguard_out/00019_00/cloth_adv.png"
+    },
+    {
+      "sample": "00022_00",
+      "ssim": 0.9922521907897424,
+      "psnr": 36.98149067868534,
+      "clean_path": "/workspace/graduate_project/leffa_photoguard_out/00022_00/cloth_clean.png",
+      "adv_path": "/workspace/graduate_project/leffa_photoguard_out/00022_00/cloth_adv.png"
+    },
+    {
+      "sample": "00023_00",
+      "ssim": 0.9913774257966561,
+      "psnr": 38.94305810489051,
+      "clean_path": "/workspace/graduate_project/leffa_photoguard_out/00023_00/cloth_clean.png",
+      "adv_path": "/workspace/graduate_project/leffa_photoguard_out/00023_00/cloth_adv.png"
+    },
+    {
+      "sample": "00024_00",
+      "ssim": 0.939270572900276,
+      "psnr": 38.22546176628616,
+      "clean_path": "/workspace/graduate_project/leffa_photoguard_out/00024_00/cloth_clean.png",
+      "adv_path": "/workspace/graduate_project/leffa_photoguard_out/00024_00/cloth_adv.png"
+    },
+    {
+      "sample": "00025_00",
+      "ssim": 0.9739989451200666,
+      "psnr": 38.24756044721183,
+      "clean_path": "/workspace/graduate_project/leffa_photoguard_out/00025_00/cloth_clean.png",
+      "adv_path": "/workspace/graduate_project/leffa_photoguard_out/00025_00/cloth_adv.png"
+    },
+    {
+      "sample": "00026_00",
+      "ssim": 0.902979587808369,
+      "psnr": 38.456967942426736,
+      "clean_path": "/workspace/graduate_project/leffa_photoguard_out/00026_00/cloth_clean.png",
+      "adv_path": "/workspace/graduate_project/leffa_photoguard_out/00026_00/cloth_adv.png"
+    },
+    {
+      "sample": "00028_00",
+      "ssim": 0.8947163521623341,
+      "psnr": 38.05421001382788,
+      "clean_path": "/workspace/graduate_project/leffa_photoguard_out/00028_00/cloth_clean.png",
+      "adv_path": "/workspace/graduate_project/leffa_photoguard_out/00028_00/cloth_adv.png"
+    },
+    {
+      "sample": "00029_00",
+      "ssim": 0.905866680509234,
+      "psnr": 38.38762008282755,
+      "clean_path": "/workspace/graduate_project/leffa_photoguard_out/00029_00/cloth_clean.png",
+      "adv_path": "/workspace/graduate_project/leffa_photoguard_out/00029_00/cloth_adv.png"
+    },
+    {
+      "sample": "00030_00",
+      "ssim": 0.937479669775612,
+      "psnr": 38.663555760221925,
+      "clean_path": "/workspace/graduate_project/leffa_photoguard_out/00030_00/cloth_clean.png",
+      "adv_path": "/workspace/graduate_project/leffa_photoguard_out/00030_00/cloth_adv.png"
+    },
+    {
+      "sample": "00031_00",
+      "ssim": 0.8783253351561862,
+      "psnr": 37.340291547123115,
+      "clean_path": "/workspace/graduate_project/leffa_photoguard_out/00031_00/cloth_clean.png",
+      "adv_path": "/workspace/graduate_project/leffa_photoguard_out/00031_00/cloth_adv.png"
+    },
+    {
+      "sample": "00032_00",
+      "ssim": 0.945778855211624,
+      "psnr": 37.62107372024382,
+      "clean_path": "/workspace/graduate_project/leffa_photoguard_out/00032_00/cloth_clean.png",
+      "adv_path": "/workspace/graduate_project/leffa_photoguard_out/00032_00/cloth_adv.png"
+    },
+    {
+      "sample": "00033_00",
+      "ssim": 0.9842672643637999,
+      "psnr": 38.52252874204397,
+      "clean_path": "/workspace/graduate_project/leffa_photoguard_out/00033_00/cloth_clean.png",
+      "adv_path": "/workspace/graduate_project/leffa_photoguard_out/00033_00/cloth_adv.png"
+    },
+    {
+      "sample": "00036_00",
+      "ssim": 0.9078459325289437,
+      "psnr": 38.94669204776914,
+      "clean_path": "/workspace/graduate_project/leffa_photoguard_out/00036_00/cloth_clean.png",
+      "adv_path": "/workspace/graduate_project/leffa_photoguard_out/00036_00/cloth_adv.png"
+    },
+    {
+      "sample": "00038_00",
+      "ssim": 0.931510184133406,
+      "psnr": 39.69425177924316,
+      "clean_path": "/workspace/graduate_project/leffa_photoguard_out/00038_00/cloth_clean.png",
+      "adv_path": "/workspace/graduate_project/leffa_photoguard_out/00038_00/cloth_adv.png"
+    },
+    {
+      "sample": "00040_00",
+      "ssim": 0.961978217050695,
+      "psnr": 39.44891809259009,
+      "clean_path": "/workspace/graduate_project/leffa_photoguard_out/00040_00/cloth_clean.png",
+      "adv_path": "/workspace/graduate_project/leffa_photoguard_out/00040_00/cloth_adv.png"
+    },
+    {
+      "sample": "00041_00",
+      "ssim": 0.8981091484408416,
+      "psnr": 38.47490017980572,
+      "clean_path": "/workspace/graduate_project/leffa_photoguard_out/00041_00/cloth_clean.png",
+      "adv_path": "/workspace/graduate_project/leffa_photoguard_out/00041_00/cloth_adv.png"
+    }
+  ],
+  "skipped": []
+}

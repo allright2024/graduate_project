@@ -1,0 +1,221 @@
+{
+  "root": "/workspace/graduate_project/optimize_ref_attention_out",
+  "num_sample_dirs": 30,
+  "num_valid_samples": 30,
+  "num_skipped_samples": 0,
+  "mean_ssim": 0.924701891239532,
+  "mean_psnr": 38.12541901989653,
+  "per_sample": [
+    {
+      "sample": "00000_00",
+      "ssim": 0.9186632137269676,
+      "psnr": 39.09405422967291,
+      "clean_path": "/workspace/graduate_project/optimize_ref_attention_out/00000_00/cloth_clean.png",
+      "adv_path": "/workspace/graduate_project/optimize_ref_attention_out/00000_00/cloth_adv.png"
+    },
+    {
+      "sample": "00001_00",
+      "ssim": 0.9038070957136869,
+      "psnr": 38.56168168428301,
+      "clean_path": "/workspace/graduate_project/optimize_ref_attention_out/00001_00/cloth_clean.png",
+      "adv_path": "/workspace/graduate_project/optimize_ref_attention_out/00001_00/cloth_adv.png"
+    },
+    {
+      "sample": "00002_00",
+      "ssim": 0.8933106939994836,
+      "psnr": 38.273007095610375,
+      "clean_path": "/workspace/graduate_project/optimize_ref_attention_out/00002_00/cloth_clean.png",
+      "adv_path": "/workspace/graduate_project/optimize_ref_attention_out/00002_00/cloth_adv.png"
+    },
+    {
+      "sample": "00003_00",
+      "ssim": 0.9102794940293397,
+      "psnr": 38.91782664534896,
+      "clean_path": "/workspace/graduate_project/optimize_ref_attention_out/00003_00/cloth_clean.png",
+      "adv_path": "/workspace/graduate_project/optimize_ref_attention_out/00003_00/cloth_adv.png"
+    },
+    {
+      "sample": "00005_00",
+      "ssim": 0.9139471054394953,
+      "psnr": 39.06721448045724,
+      "clean_path": "/workspace/graduate_project/optimize_ref_attention_out/00005_00/cloth_clean.png",
+      "adv_path": "/workspace/graduate_project/optimize_ref_attention_out/00005_00/cloth_adv.png"
+    },
+    {
+      "sample": "00007_00",
+      "ssim": 0.9069901066786521,
+      "psnr": 38.19704003763385,
+      "clean_path": "/workspace/graduate_project/optimize_ref_attention_out/00007_00/cloth_clean.png",
+      "adv_path": "/workspace/graduate_project/optimize_ref_attention_out/00007_00/cloth_adv.png"
+    },
+    {
+      "sample": "00009_00",
+      "ssim": 0.9205812781012449,
+      "psnr": 39.366598350407294,
+      "clean_path": "/workspace/graduate_project/optimize_ref_attention_out/00009_00/cloth_clean.png",
+      "adv_path": "/workspace/graduate_project/optimize_ref_attention_out/00009_00/cloth_adv.png"
+    },
+    {
+      "sample": "00010_00",
+      "ssim": 0.9209966794875654,
+      "psnr": 39.35061973346418,
+      "clean_path": "/workspace/graduate_project/optimize_ref_attention_out/00010_00/cloth_clean.png",
+      "adv_path": "/workspace/graduate_project/optimize_ref_attention_out/00010_00/cloth_adv.png"
+    },
+    {
+      "sample": "00011_00",
+      "ssim": 0.9086831040277393,
+      "psnr": 38.73651044952116,
+      "clean_path": "/workspace/graduate_project/optimize_ref_attention_out/00011_00/cloth_clean.png",
+      "adv_path": "/workspace/graduate_project/optimize_ref_attention_out/00011_00/cloth_adv.png"
+    },
+    {
+      "sample": "00012_00",
+      "ssim": 0.8862262092673853,
+      "psnr": 37.648861993135526,
+      "clean_path": "/workspace/graduate_project/optimize_ref_attention_out/00012_00/cloth_clean.png",
+      "adv_path": "/workspace/graduate_project/optimize_ref_attention_out/00012_00/cloth_adv.png"
+    },
+    {
+      "sample": "00014_00",
+      "ssim": 0.916022578044187,
+      "psnr": 38.5917623676865,
+      "clean_path": "/workspace/graduate_project/optimize_ref_attention_out/00014_00/cloth_clean.png",
+      "adv_path": "/workspace/graduate_project/optimize_ref_attention_out/00014_00/cloth_adv.png"
+    },
+    {
+      "sample": "00015_00",
+      "ssim": 0.9384287776805268,
+      "psnr": 38.0607943275144,
+      "clean_path": "/workspace/graduate_project/optimize_ref_attention_out/00015_00/cloth_clean.png",
+      "adv_path": "/workspace/graduate_project/optimize_ref_attention_out/00015_00/cloth_adv.png"
+    },
+    {
+      "sample": "00016_00",
+      "ssim": 0.9720522522177233,
+      "psnr": 35.747640642329266,
+      "clean_path": "/workspace/graduate_project/optimize_ref_attention_out/00016_00/cloth_clean.png",
+      "adv_path": "/workspace/graduate_project/optimize_ref_attention_out/00016_00/cloth_adv.png"
+    },
+    {
+      "sample": "00018_00",
+      "ssim": 0.9062818008311119,
+      "psnr": 38.2862346831275,
+      "clean_path": "/workspace/graduate_project/optimize_ref_attention_out/00018_00/cloth_clean.png",
+      "adv_path": "/workspace/graduate_project/optimize_ref_attention_out/00018_00/cloth_adv.png"
+    },
+    {
+      "sample": "00019_00",
+      "ssim": 0.9032770248272582,
+      "psnr": 38.403571072037664,
+      "clean_path": "/workspace/graduate_project/optimize_ref_attention_out/00019_00/cloth_clean.png",
+      "adv_path": "/workspace/graduate_project/optimize_ref_attention_out/00019_00/cloth_adv.png"
+    },
+    {
+      "sample": "00022_00",
+      "ssim": 0.9883399468040764,
+      "psnr": 34.885397200281936,
+      "clean_path": "/workspace/graduate_project/optimize_ref_attention_out/00022_00/cloth_clean.png",
+      "adv_path": "/workspace/graduate_project/optimize_ref_attention_out/00022_00/cloth_adv.png"
+    },
+    {
+      "sample": "00023_00",
+      "ssim": 0.9898504334505952,
+      "psnr": 38.04744280545902,
+      "clean_path": "/workspace/graduate_project/optimize_ref_attention_out/00023_00/cloth_clean.png",
+      "adv_path": "/workspace/graduate_project/optimize_ref_attention_out/00023_00/cloth_adv.png"
+    },
+    {
+      "sample": "00024_00",
+      "ssim": 0.9373380357781955,
+      "psnr": 37.79593065622982,
+      "clean_path": "/workspace/graduate_project/optimize_ref_attention_out/00024_00/cloth_clean.png",
+      "adv_path": "/workspace/graduate_project/optimize_ref_attention_out/00024_00/cloth_adv.png"
+    },
+    {
+      "sample": "00025_00",
+      "ssim": 0.9727369198534536,
+      "psnr": 37.8568395659245,
+      "clean_path": "/workspace/graduate_project/optimize_ref_attention_out/00025_00/cloth_clean.png",
+      "adv_path": "/workspace/graduate_project/optimize_ref_attention_out/00025_00/cloth_adv.png"
+    },
+    {
+      "sample": "00026_00",
+      "ssim": 0.9028099367928623,
+      "psnr": 38.23125715383226,
+      "clean_path": "/workspace/graduate_project/optimize_ref_attention_out/00026_00/cloth_clean.png",
+      "adv_path": "/workspace/graduate_project/optimize_ref_attention_out/00026_00/cloth_adv.png"
+    },
+    {
+      "sample": "00028_00",
+      "ssim": 0.8950304152114309,
+      "psnr": 37.95660795943215,
+      "clean_path": "/workspace/graduate_project/optimize_ref_attention_out/00028_00/cloth_clean.png",
+      "adv_path": "/workspace/graduate_project/optimize_ref_attention_out/00028_00/cloth_adv.png"
+    },
+    {
+      "sample": "00029_00",
+      "ssim": 0.9053080634761757,
+      "psnr": 38.1037406503593,
+      "clean_path": "/workspace/graduate_project/optimize_ref_attention_out/00029_00/cloth_clean.png",
+      "adv_path": "/workspace/graduate_project/optimize_ref_attention_out/00029_00/cloth_adv.png"
+    },
+    {
+      "sample": "00030_00",
+      "ssim": 0.9360696556803583,
+      "psnr": 38.38560279876824,
+      "clean_path": "/workspace/graduate_project/optimize_ref_attention_out/00030_00/cloth_clean.png",
+      "adv_path": "/workspace/graduate_project/optimize_ref_attention_out/00030_00/cloth_adv.png"
+    },
+    {
+      "sample": "00031_00",
+      "ssim": 0.879689454387587,
+      "psnr": 37.17468711232668,
+      "clean_path": "/workspace/graduate_project/optimize_ref_attention_out/00031_00/cloth_clean.png",
+      "adv_path": "/workspace/graduate_project/optimize_ref_attention_out/00031_00/cloth_adv.png"
+    },
+    {
+      "sample": "00032_00",
+      "ssim": 0.9366983161950775,
+      "psnr": 36.21397224259195,
+      "clean_path": "/workspace/graduate_project/optimize_ref_attention_out/00032_00/cloth_clean.png",
+      "adv_path": "/workspace/graduate_project/optimize_ref_attention_out/00032_00/cloth_adv.png"
+    },
+    {
+      "sample": "00033_00",
+      "ssim": 0.9788608816897839,
+      "psnr": 36.90296851527452,
+      "clean_path": "/workspace/graduate_project/optimize_ref_attention_out/00033_00/cloth_clean.png",
+      "adv_path": "/workspace/graduate_project/optimize_ref_attention_out/00033_00/cloth_adv.png"
+    },
+    {
+      "sample": "00036_00",
+      "ssim": 0.9085303425362009,
+      "psnr": 38.869141815715565,
+      "clean_path": "/workspace/graduate_project/optimize_ref_attention_out/00036_00/cloth_clean.png",
+      "adv_path": "/workspace/graduate_project/optimize_ref_attention_out/00036_00/cloth_adv.png"
+    },
+    {
+      "sample": "00038_00",
+      "ssim": 0.9314169215966901,
+      "psnr": 39.49082504711096,
+      "clean_path": "/workspace/graduate_project/optimize_ref_attention_out/00038_00/cloth_clean.png",
+      "adv_path": "/workspace/graduate_project/optimize_ref_attention_out/00038_00/cloth_adv.png"
+    },
+    {
+      "sample": "00040_00",
+      "ssim": 0.9600682277179078,
+      "psnr": 39.13879819171093,
+      "clean_path": "/workspace/graduate_project/optimize_ref_attention_out/00040_00/cloth_clean.png",
+      "adv_path": "/workspace/graduate_project/optimize_ref_attention_out/00040_00/cloth_adv.png"
+    },
+    {
+      "sample": "00041_00",
+      "ssim": 0.8987617719431977,
+      "psnr": 38.405941089648195,
+      "clean_path": "/workspace/graduate_project/optimize_ref_attention_out/00041_00/cloth_clean.png",
+      "adv_path": "/workspace/graduate_project/optimize_ref_attention_out/00041_00/cloth_adv.png"
+    }
+  ],
+  "skipped": []
+}

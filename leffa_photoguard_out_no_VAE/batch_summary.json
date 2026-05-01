@@ -1,0 +1,186 @@
+{
+  "num_pairs": 30,
+  "target_timestep": 981,
+  "items": [
+    {
+      "file_name": "00000_00.jpg",
+      "output_dir": "leffa_photoguard_out_no_VAE/00000_00",
+      "final_loss": 6.76171875,
+      "final_delta_linf_normalized": 0.6302686929702759
+    },
+    {
+      "file_name": "00001_00.jpg",
+      "output_dir": "leffa_photoguard_out_no_VAE/00001_00",
+      "final_loss": 4.71484375,
+      "final_delta_linf_normalized": 1.1069872379302979
+    },
+    {
+      "file_name": "00002_00.jpg",
+      "output_dir": "leffa_photoguard_out_no_VAE/00002_00",
+      "final_loss": 1.6533203125,
+      "final_delta_linf_normalized": 0.5406068563461304
+    },
+    {
+      "file_name": "00003_00.jpg",
+      "output_dir": "leffa_photoguard_out_no_VAE/00003_00",
+      "final_loss": 4.44921875,
+      "final_delta_linf_normalized": 0.7860638499259949
+    },
+    {
+      "file_name": "00005_00.jpg",
+      "output_dir": "leffa_photoguard_out_no_VAE/00005_00",
+      "final_loss": 6.703125,
+      "final_delta_linf_normalized": 1.1043026447296143
+    },
+    {
+      "file_name": "00007_00.jpg",
+      "output_dir": "leffa_photoguard_out_no_VAE/00007_00",
+      "final_loss": 2.451171875,
+      "final_delta_linf_normalized": 0.7518171668052673
+    },
+    {
+      "file_name": "00009_00.jpg",
+      "output_dir": "leffa_photoguard_out_no_VAE/00009_00",
+      "final_loss": 3.51953125,
+      "final_delta_linf_normalized": 1.6163277626037598
+    },
+    {
+      "file_name": "00010_00.jpg",
+      "output_dir": "leffa_photoguard_out_no_VAE/00010_00",
+      "final_loss": 5.328125,
+      "final_delta_linf_normalized": 0.8629940152168274
+    },
+    {
+      "file_name": "00011_00.jpg",
+      "output_dir": "leffa_photoguard_out_no_VAE/00011_00",
+      "final_loss": 3.083984375,
+      "final_delta_linf_normalized": 1.3867762088775635
+    },
+    {
+      "file_name": "00012_00.jpg",
+      "output_dir": "leffa_photoguard_out_no_VAE/00012_00",
+      "final_loss": 4.671875,
+      "final_delta_linf_normalized": 1.0481206178665161
+    },
+    {
+      "file_name": "00014_00.jpg",
+      "output_dir": "leffa_photoguard_out_no_VAE/00014_00",
+      "final_loss": 5.19140625,
+      "final_delta_linf_normalized": 0.4187208414077759
+    },
+    {
+      "file_name": "00015_00.jpg",
+      "output_dir": "leffa_photoguard_out_no_VAE/00015_00",
+      "final_loss": 5.42578125,
+      "final_delta_linf_normalized": 1.0231541395187378
+    },
+    {
+      "file_name": "00016_00.jpg",
+      "output_dir": "leffa_photoguard_out_no_VAE/00016_00",
+      "final_loss": 6.0859375,
+      "final_delta_linf_normalized": 1.5770546197891235
+    },
+    {
+      "file_name": "00018_00.jpg",
+      "output_dir": "leffa_photoguard_out_no_VAE/00018_00",
+      "final_loss": 4.7890625,
+      "final_delta_linf_normalized": 0.5254988670349121
+    },
+    {
+      "file_name": "00019_00.jpg",
+      "output_dir": "leffa_photoguard_out_no_VAE/00019_00",
+      "final_loss": 4.86328125,
+      "final_delta_linf_normalized": 0.9730449914932251
+    },
+    {
+      "file_name": "00022_00.jpg",
+      "output_dir": "leffa_photoguard_out_no_VAE/00022_00",
+      "final_loss": 5.9140625,
+      "final_delta_linf_normalized": 1.7369351387023926
+    },
+    {
+      "file_name": "00023_00.jpg",
+      "output_dir": "leffa_photoguard_out_no_VAE/00023_00",
+      "final_loss": 2.802734375,
+      "final_delta_linf_normalized": 1.26919424533844
+    },
+    {
+      "file_name": "00024_00.jpg",
+      "output_dir": "leffa_photoguard_out_no_VAE/00024_00",
+      "final_loss": 4.15625,
+      "final_delta_linf_normalized": 0.4255342483520508
+    },
+    {
+      "file_name": "00025_00.jpg",
+      "output_dir": "leffa_photoguard_out_no_VAE/00025_00",
+      "final_loss": 3.48046875,
+      "final_delta_linf_normalized": 0.8663593530654907
+    },
+    {
+      "file_name": "00026_00.jpg",
+      "output_dir": "leffa_photoguard_out_no_VAE/00026_00",
+      "final_loss": 4.32421875,
+      "final_delta_linf_normalized": 1.1690870523452759
+    },
+    {
+      "file_name": "00028_00.jpg",
+      "output_dir": "leffa_photoguard_out_no_VAE/00028_00",
+      "final_loss": 9.0,
+      "final_delta_linf_normalized": 1.3753600120544434
+    },
+    {
+      "file_name": "00029_00.jpg",
+      "output_dir": "leffa_photoguard_out_no_VAE/00029_00",
+      "final_loss": 3.734375,
+      "final_delta_linf_normalized": 1.0469295978546143
+    },
+    {
+      "file_name": "00030_00.jpg",
+      "output_dir": "leffa_photoguard_out_no_VAE/00030_00",
+      "final_loss": 4.27734375,
+      "final_delta_linf_normalized": 1.6021082401275635
+    },
+    {
+      "file_name": "00031_00.jpg",
+      "output_dir": "leffa_photoguard_out_no_VAE/00031_00",
+      "final_loss": 6.01171875,
+      "final_delta_linf_normalized": 1.0830940008163452
+    },
+    {
+      "file_name": "00032_00.jpg",
+      "output_dir": "leffa_photoguard_out_no_VAE/00032_00",
+      "final_loss": 5.8125,
+      "final_delta_linf_normalized": 1.2650113105773926
+    },
+    {
+      "file_name": "00033_00.jpg",
+      "output_dir": "leffa_photoguard_out_no_VAE/00033_00",
+      "final_loss": 2.7734375,
+      "final_delta_linf_normalized": 1.4248946905136108
+    },
+    {
+      "file_name": "00036_00.jpg",
+      "output_dir": "leffa_photoguard_out_no_VAE/00036_00",
+      "final_loss": 3.080078125,
+      "final_delta_linf_normalized": 0.6793084144592285
+    },
+    {
+      "file_name": "00038_00.jpg",
+      "output_dir": "leffa_photoguard_out_no_VAE/00038_00",
+      "final_loss": 4.328125,
+      "final_delta_linf_normalized": 1.23892080783844
+    },
+    {
+      "file_name": "00040_00.jpg",
+      "output_dir": "leffa_photoguard_out_no_VAE/00040_00",
+      "final_loss": 6.98046875,
+      "final_delta_linf_normalized": 1.011928915977478
+    },
+    {
+      "file_name": "00041_00.jpg",
+      "output_dir": "leffa_photoguard_out_no_VAE/00041_00",
+      "final_loss": 7.59765625,
+      "final_delta_linf_normalized": 1.1153827905654907
+    }
+  ]
+}

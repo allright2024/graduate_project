@@ -1,0 +1,186 @@
+{
+  "num_pairs": 30,
+  "target_timestep": 981,
+  "items": [
+    {
+      "file_name": "00000_00.jpg",
+      "output_dir": "optimize_ref_attention_out/00000_00",
+      "final_reference_self": 4.491530418395996,
+      "final_delta_linf_normalized": 0.06298828125
+    },
+    {
+      "file_name": "00001_00.jpg",
+      "output_dir": "optimize_ref_attention_out/00001_00",
+      "final_reference_self": 4.479902744293213,
+      "final_delta_linf_normalized": 0.06298828125
+    },
+    {
+      "file_name": "00002_00.jpg",
+      "output_dir": "optimize_ref_attention_out/00002_00",
+      "final_reference_self": 4.464382171630859,
+      "final_delta_linf_normalized": 0.06298828125
+    },
+    {
+      "file_name": "00003_00.jpg",
+      "output_dir": "optimize_ref_attention_out/00003_00",
+      "final_reference_self": 4.501614093780518,
+      "final_delta_linf_normalized": 0.06298828125
+    },
+    {
+      "file_name": "00005_00.jpg",
+      "output_dir": "optimize_ref_attention_out/00005_00",
+      "final_reference_self": 4.482354640960693,
+      "final_delta_linf_normalized": 0.06298828125
+    },
+    {
+      "file_name": "00007_00.jpg",
+      "output_dir": "optimize_ref_attention_out/00007_00",
+      "final_reference_self": 4.479994297027588,
+      "final_delta_linf_normalized": 0.06298828125
+    },
+    {
+      "file_name": "00009_00.jpg",
+      "output_dir": "optimize_ref_attention_out/00009_00",
+      "final_reference_self": 4.491196155548096,
+      "final_delta_linf_normalized": 0.06298828125
+    },
+    {
+      "file_name": "00010_00.jpg",
+      "output_dir": "optimize_ref_attention_out/00010_00",
+      "final_reference_self": 4.4917755126953125,
+      "final_delta_linf_normalized": 0.06298828125
+    },
+    {
+      "file_name": "00011_00.jpg",
+      "output_dir": "optimize_ref_attention_out/00011_00",
+      "final_reference_self": 4.518750190734863,
+      "final_delta_linf_normalized": 0.06298828125
+    },
+    {
+      "file_name": "00012_00.jpg",
+      "output_dir": "optimize_ref_attention_out/00012_00",
+      "final_reference_self": 4.459569931030273,
+      "final_delta_linf_normalized": 0.06298828125
+    },
+    {
+      "file_name": "00014_00.jpg",
+      "output_dir": "optimize_ref_attention_out/00014_00",
+      "final_reference_self": 4.4794535636901855,
+      "final_delta_linf_normalized": 0.06298828125
+    },
+    {
+      "file_name": "00015_00.jpg",
+      "output_dir": "optimize_ref_attention_out/00015_00",
+      "final_reference_self": 4.465590000152588,
+      "final_delta_linf_normalized": 0.06298828125
+    },
+    {
+      "file_name": "00016_00.jpg",
+      "output_dir": "optimize_ref_attention_out/00016_00",
+      "final_reference_self": 4.545017242431641,
+      "final_delta_linf_normalized": 0.06298828125
+    },
+    {
+      "file_name": "00018_00.jpg",
+      "output_dir": "optimize_ref_attention_out/00018_00",
+      "final_reference_self": 4.48817253112793,
+      "final_delta_linf_normalized": 0.06298828125
+    },
+    {
+      "file_name": "00019_00.jpg",
+      "output_dir": "optimize_ref_attention_out/00019_00",
+      "final_reference_self": 4.477414131164551,
+      "final_delta_linf_normalized": 0.06298828125
+    },
+    {
+      "file_name": "00022_00.jpg",
+      "output_dir": "optimize_ref_attention_out/00022_00",
+      "final_reference_self": 4.704075336456299,
+      "final_delta_linf_normalized": 0.06298828125
+    },
+    {
+      "file_name": "00023_00.jpg",
+      "output_dir": "optimize_ref_attention_out/00023_00",
+      "final_reference_self": 4.520909786224365,
+      "final_delta_linf_normalized": 0.06298828125
+    },
+    {
+      "file_name": "00024_00.jpg",
+      "output_dir": "optimize_ref_attention_out/00024_00",
+      "final_reference_self": 4.4820637702941895,
+      "final_delta_linf_normalized": 0.06298828125
+    },
+    {
+      "file_name": "00025_00.jpg",
+      "output_dir": "optimize_ref_attention_out/00025_00",
+      "final_reference_self": 4.43372917175293,
+      "final_delta_linf_normalized": 0.06298828125
+    },
+    {
+      "file_name": "00026_00.jpg",
+      "output_dir": "optimize_ref_attention_out/00026_00",
+      "final_reference_self": 4.475047588348389,
+      "final_delta_linf_normalized": 0.06298828125
+    },
+    {
+      "file_name": "00028_00.jpg",
+      "output_dir": "optimize_ref_attention_out/00028_00",
+      "final_reference_self": 4.465606689453125,
+      "final_delta_linf_normalized": 0.06298828125
+    },
+    {
+      "file_name": "00029_00.jpg",
+      "output_dir": "optimize_ref_attention_out/00029_00",
+      "final_reference_self": 4.482285022735596,
+      "final_delta_linf_normalized": 0.06298828125
+    },
+    {
+      "file_name": "00030_00.jpg",
+      "output_dir": "optimize_ref_attention_out/00030_00",
+      "final_reference_self": 4.541216850280762,
+      "final_delta_linf_normalized": 0.06298828125
+    },
+    {
+      "file_name": "00031_00.jpg",
+      "output_dir": "optimize_ref_attention_out/00031_00",
+      "final_reference_self": 4.479281902313232,
+      "final_delta_linf_normalized": 0.06298828125
+    },
+    {
+      "file_name": "00032_00.jpg",
+      "output_dir": "optimize_ref_attention_out/00032_00",
+      "final_reference_self": 4.498879909515381,
+      "final_delta_linf_normalized": 0.06298828125
+    },
+    {
+      "file_name": "00033_00.jpg",
+      "output_dir": "optimize_ref_attention_out/00033_00",
+      "final_reference_self": 4.518661975860596,
+      "final_delta_linf_normalized": 0.06298828125
+    },
+    {
+      "file_name": "00036_00.jpg",
+      "output_dir": "optimize_ref_attention_out/00036_00",
+      "final_reference_self": 4.47693395614624,
+      "final_delta_linf_normalized": 0.06298828125
+    },
+    {
+      "file_name": "00038_00.jpg",
+      "output_dir": "optimize_ref_attention_out/00038_00",
+      "final_reference_self": 4.488417148590088,
+      "final_delta_linf_normalized": 0.06298828125
+    },
+    {
+      "file_name": "00040_00.jpg",
+      "output_dir": "optimize_ref_attention_out/00040_00",
+      "final_reference_self": 4.424060344696045,
+      "final_delta_linf_normalized": 0.06298828125
+    },
+    {
+      "file_name": "00041_00.jpg",
+      "output_dir": "optimize_ref_attention_out/00041_00",
+      "final_reference_self": 4.46763801574707,
+      "final_delta_linf_normalized": 0.06298828125
+    }
+  ]
+}

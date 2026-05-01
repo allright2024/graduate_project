@@ -1,0 +1,610 @@
+{
+  "processed": [
+    {
+      "src_image": "/workspace/vton/train/image/00000_00.jpg",
+      "agnostic_mask": "/workspace/vton/train/agnostic-mask/00000_00_mask.png",
+      "cloth_image": "/workspace/graduate_project/leffa_photoguard_out_no_VAE/00000_00/cloth_clean.png",
+      "cloth_mask": "/workspace/vton/train/cloth-mask/00000_00.jpg",
+      "output": "outputs_no_VAE/clean/00000_00.jpg",
+      "sample": "00000_00",
+      "mode": "clean",
+      "status": "ok"
+    },
+    {
+      "src_image": "/workspace/vton/train/image/00000_00.jpg",
+      "agnostic_mask": "/workspace/vton/train/agnostic-mask/00000_00_mask.png",
+      "cloth_image": "/workspace/graduate_project/leffa_photoguard_out_no_VAE/00000_00/cloth_adv.png",
+      "cloth_mask": "/workspace/vton/train/cloth-mask/00000_00.jpg",
+      "output": "outputs_no_VAE/adv/00000_00.jpg",
+      "sample": "00000_00",
+      "mode": "adv",
+      "status": "ok"
+    },
+    {
+      "src_image": "/workspace/vton/train/image/00001_00.jpg",
+      "agnostic_mask": "/workspace/vton/train/agnostic-mask/00001_00_mask.png",
+      "cloth_image": "/workspace/graduate_project/leffa_photoguard_out_no_VAE/00001_00/cloth_clean.png",
+      "cloth_mask": "/workspace/vton/train/cloth-mask/00001_00.jpg",
+      "output": "outputs_no_VAE/clean/00001_00.jpg",
+      "sample": "00001_00",
+      "mode": "clean",
+      "status": "ok"
+    },
+    {
+      "src_image": "/workspace/vton/train/image/00001_00.jpg",
+      "agnostic_mask": "/workspace/vton/train/agnostic-mask/00001_00_mask.png",
+      "cloth_image": "/workspace/graduate_project/leffa_photoguard_out_no_VAE/00001_00/cloth_adv.png",
+      "cloth_mask": "/workspace/vton/train/cloth-mask/00001_00.jpg",
+      "output": "outputs_no_VAE/adv/00001_00.jpg",
+      "sample": "00001_00",
+      "mode": "adv",
+      "status": "ok"
+    },
+    {
+      "src_image": "/workspace/vton/train/image/00002_00.jpg",
+      "agnostic_mask": "/workspace/vton/train/agnostic-mask/00002_00_mask.png",
+      "cloth_image": "/workspace/graduate_project/leffa_photoguard_out_no_VAE/00002_00/cloth_clean.png",
+      "cloth_mask": "/workspace/vton/train/cloth-mask/00002_00.jpg",
+      "output": "outputs_no_VAE/clean/00002_00.jpg",
+      "sample": "00002_00",
+      "mode": "clean",
+      "status": "ok"
+    },
+    {
+      "src_image": "/workspace/vton/train/image/00002_00.jpg",
+      "agnostic_mask": "/workspace/vton/train/agnostic-mask/00002_00_mask.png",
+      "cloth_image": "/workspace/graduate_project/leffa_photoguard_out_no_VAE/00002_00/cloth_adv.png",
+      "cloth_mask": "/workspace/vton/train/cloth-mask/00002_00.jpg",
+      "output": "outputs_no_VAE/adv/00002_00.jpg",
+      "sample": "00002_00",
+      "mode": "adv",
+      "status": "ok"
+    },
+    {
+      "src_image": "/workspace/vton/train/image/00003_00.jpg",
+      "agnostic_mask": "/workspace/vton/train/agnostic-mask/00003_00_mask.png",
+      "cloth_image": "/workspace/graduate_project/leffa_photoguard_out_no_VAE/00003_00/cloth_clean.png",
+      "cloth_mask": "/workspace/vton/train/cloth-mask/00003_00.jpg",
+      "output": "outputs_no_VAE/clean/00003_00.jpg",
+      "sample": "00003_00",
+      "mode": "clean",
+      "status": "ok"
+    },
+    {
+      "src_image": "/workspace/vton/train/image/00003_00.jpg",
+      "agnostic_mask": "/workspace/vton/train/agnostic-mask/00003_00_mask.png",
+      "cloth_image": "/workspace/graduate_project/leffa_photoguard_out_no_VAE/00003_00/cloth_adv.png",
+      "cloth_mask": "/workspace/vton/train/cloth-mask/00003_00.jpg",
+      "output": "outputs_no_VAE/adv/00003_00.jpg",
+      "sample": "00003_00",
+      "mode": "adv",
+      "status": "ok"
+    },
+    {
+      "src_image": "/workspace/vton/train/image/00005_00.jpg",
+      "agnostic_mask": "/workspace/vton/train/agnostic-mask/00005_00_mask.png",
+      "cloth_image": "/workspace/graduate_project/leffa_photoguard_out_no_VAE/00005_00/cloth_clean.png",
+      "cloth_mask": "/workspace/vton/train/cloth-mask/00005_00.jpg",
+      "output": "outputs_no_VAE/clean/00005_00.jpg",
+      "sample": "00005_00",
+      "mode": "clean",
+      "status": "ok"
+    },
+    {
+      "src_image": "/workspace/vton/train/image/00005_00.jpg",
+      "agnostic_mask": "/workspace/vton/train/agnostic-mask/00005_00_mask.png",
+      "cloth_image": "/workspace/graduate_project/leffa_photoguard_out_no_VAE/00005_00/cloth_adv.png",
+      "cloth_mask": "/workspace/vton/train/cloth-mask/00005_00.jpg",
+      "output": "outputs_no_VAE/adv/00005_00.jpg",
+      "sample": "00005_00",
+      "mode": "adv",
+      "status": "ok"
+    },
+    {
+      "src_image": "/workspace/vton/train/image/00007_00.jpg",
+      "agnostic_mask": "/workspace/vton/train/agnostic-mask/00007_00_mask.png",
+      "cloth_image": "/workspace/graduate_project/leffa_photoguard_out_no_VAE/00007_00/cloth_clean.png",
+      "cloth_mask": "/workspace/vton/train/cloth-mask/00007_00.jpg",
+      "output": "outputs_no_VAE/clean/00007_00.jpg",
+      "sample": "00007_00",
+      "mode": "clean",
+      "status": "ok"
+    },
+    {
+      "src_image": "/workspace/vton/train/image/00007_00.jpg",
+      "agnostic_mask": "/workspace/vton/train/agnostic-mask/00007_00_mask.png",
+      "cloth_image": "/workspace/graduate_project/leffa_photoguard_out_no_VAE/00007_00/cloth_adv.png",
+      "cloth_mask": "/workspace/vton/train/cloth-mask/00007_00.jpg",
+      "output": "outputs_no_VAE/adv/00007_00.jpg",
+      "sample": "00007_00",
+      "mode": "adv",
+      "status": "ok"
+    },
+    {
+      "src_image": "/workspace/vton/train/image/00009_00.jpg",
+      "agnostic_mask": "/workspace/vton/train/agnostic-mask/00009_00_mask.png",
+      "cloth_image": "/workspace/graduate_project/leffa_photoguard_out_no_VAE/00009_00/cloth_clean.png",
+      "cloth_mask": "/workspace/vton/train/cloth-mask/00009_00.jpg",
+      "output": "outputs_no_VAE/clean/00009_00.jpg",
+      "sample": "00009_00",
+      "mode": "clean",
+      "status": "ok"
+    },
+    {
+      "src_image": "/workspace/vton/train/image/00009_00.jpg",
+      "agnostic_mask": "/workspace/vton/train/agnostic-mask/00009_00_mask.png",
+      "cloth_image": "/workspace/graduate_project/leffa_photoguard_out_no_VAE/00009_00/cloth_adv.png",
+      "cloth_mask": "/workspace/vton/train/cloth-mask/00009_00.jpg",
+      "output": "outputs_no_VAE/adv/00009_00.jpg",
+      "sample": "00009_00",
+      "mode": "adv",
+      "status": "ok"
+    },
+    {
+      "src_image": "/workspace/vton/train/image/00010_00.jpg",
+      "agnostic_mask": "/workspace/vton/train/agnostic-mask/00010_00_mask.png",
+      "cloth_image": "/workspace/graduate_project/leffa_photoguard_out_no_VAE/00010_00/cloth_clean.png",
+      "cloth_mask": "/workspace/vton/train/cloth-mask/00010_00.jpg",
+      "output": "outputs_no_VAE/clean/00010_00.jpg",
+      "sample": "00010_00",
+      "mode": "clean",
+      "status": "ok"
+    },
+    {
+      "src_image": "/workspace/vton/train/image/00010_00.jpg",
+      "agnostic_mask": "/workspace/vton/train/agnostic-mask/00010_00_mask.png",
+      "cloth_image": "/workspace/graduate_project/leffa_photoguard_out_no_VAE/00010_00/cloth_adv.png",
+      "cloth_mask": "/workspace/vton/train/cloth-mask/00010_00.jpg",
+      "output": "outputs_no_VAE/adv/00010_00.jpg",
+      "sample": "00010_00",
+      "mode": "adv",
+      "status": "ok"
+    },
+    {
+      "src_image": "/workspace/vton/train/image/00011_00.jpg",
+      "agnostic_mask": "/workspace/vton/train/agnostic-mask/00011_00_mask.png",
+      "cloth_image": "/workspace/graduate_project/leffa_photoguard_out_no_VAE/00011_00/cloth_clean.png",
+      "cloth_mask": "/workspace/vton/train/cloth-mask/00011_00.jpg",
+      "output": "outputs_no_VAE/clean/00011_00.jpg",
+      "sample": "00011_00",
+      "mode": "clean",
+      "status": "ok"
+    },
+    {
+      "src_image": "/workspace/vton/train/image/00011_00.jpg",
+      "agnostic_mask": "/workspace/vton/train/agnostic-mask/00011_00_mask.png",
+      "cloth_image": "/workspace/graduate_project/leffa_photoguard_out_no_VAE/00011_00/cloth_adv.png",
+      "cloth_mask": "/workspace/vton/train/cloth-mask/00011_00.jpg",
+      "output": "outputs_no_VAE/adv/00011_00.jpg",
+      "sample": "00011_00",
+      "mode": "adv",
+      "status": "ok"
+    },
+    {
+      "src_image": "/workspace/vton/train/image/00012_00.jpg",
+      "agnostic_mask": "/workspace/vton/train/agnostic-mask/00012_00_mask.png",
+      "cloth_image": "/workspace/graduate_project/leffa_photoguard_out_no_VAE/00012_00/cloth_clean.png",
+      "cloth_mask": "/workspace/vton/train/cloth-mask/00012_00.jpg",
+      "output": "outputs_no_VAE/clean/00012_00.jpg",
+      "sample": "00012_00",
+      "mode": "clean",
+      "status": "ok"
+    },
+    {
+      "src_image": "/workspace/vton/train/image/00012_00.jpg",
+      "agnostic_mask": "/workspace/vton/train/agnostic-mask/00012_00_mask.png",
+      "cloth_image": "/workspace/graduate_project/leffa_photoguard_out_no_VAE/00012_00/cloth_adv.png",
+      "cloth_mask": "/workspace/vton/train/cloth-mask/00012_00.jpg",
+      "output": "outputs_no_VAE/adv/00012_00.jpg",
+      "sample": "00012_00",
+      "mode": "adv",
+      "status": "ok"
+    },
+    {
+      "src_image": "/workspace/vton/train/image/00014_00.jpg",
+      "agnostic_mask": "/workspace/vton/train/agnostic-mask/00014_00_mask.png",
+      "cloth_image": "/workspace/graduate_project/leffa_photoguard_out_no_VAE/00014_00/cloth_clean.png",
+      "cloth_mask": "/workspace/vton/train/cloth-mask/00014_00.jpg",
+      "output": "outputs_no_VAE/clean/00014_00.jpg",
+      "sample": "00014_00",
+      "mode": "clean",
+      "status": "ok"
+    },
+    {
+      "src_image": "/workspace/vton/train/image/00014_00.jpg",
+      "agnostic_mask": "/workspace/vton/train/agnostic-mask/00014_00_mask.png",
+      "cloth_image": "/workspace/graduate_project/leffa_photoguard_out_no_VAE/00014_00/cloth_adv.png",
+      "cloth_mask": "/workspace/vton/train/cloth-mask/00014_00.jpg",
+      "output": "outputs_no_VAE/adv/00014_00.jpg",
+      "sample": "00014_00",
+      "mode": "adv",
+      "status": "ok"
+    },
+    {
+      "src_image": "/workspace/vton/train/image/00015_00.jpg",
+      "agnostic_mask": "/workspace/vton/train/agnostic-mask/00015_00_mask.png",
+      "cloth_image": "/workspace/graduate_project/leffa_photoguard_out_no_VAE/00015_00/cloth_clean.png",
+      "cloth_mask": "/workspace/vton/train/cloth-mask/00015_00.jpg",
+      "output": "outputs_no_VAE/clean/00015_00.jpg",
+      "sample": "00015_00",
+      "mode": "clean",
+      "status": "ok"
+    },
+    {
+      "src_image": "/workspace/vton/train/image/00015_00.jpg",
+      "agnostic_mask": "/workspace/vton/train/agnostic-mask/00015_00_mask.png",
+      "cloth_image": "/workspace/graduate_project/leffa_photoguard_out_no_VAE/00015_00/cloth_adv.png",
+      "cloth_mask": "/workspace/vton/train/cloth-mask/00015_00.jpg",
+      "output": "outputs_no_VAE/adv/00015_00.jpg",
+      "sample": "00015_00",
+      "mode": "adv",
+      "status": "ok"
+    },
+    {
+      "src_image": "/workspace/vton/train/image/00016_00.jpg",
+      "agnostic_mask": "/workspace/vton/train/agnostic-mask/00016_00_mask.png",
+      "cloth_image": "/workspace/graduate_project/leffa_photoguard_out_no_VAE/00016_00/cloth_clean.png",
+      "cloth_mask": "/workspace/vton/train/cloth-mask/00016_00.jpg",
+      "output": "outputs_no_VAE/clean/00016_00.jpg",
+      "sample": "00016_00",
+      "mode": "clean",
+      "status": "ok"
+    },
+    {
+      "src_image": "/workspace/vton/train/image/00016_00.jpg",
+      "agnostic_mask": "/workspace/vton/train/agnostic-mask/00016_00_mask.png",
+      "cloth_image": "/workspace/graduate_project/leffa_photoguard_out_no_VAE/00016_00/cloth_adv.png",
+      "cloth_mask": "/workspace/vton/train/cloth-mask/00016_00.jpg",
+      "output": "outputs_no_VAE/adv/00016_00.jpg",
+      "sample": "00016_00",
+      "mode": "adv",
+      "status": "ok"
+    },
+    {
+      "src_image": "/workspace/vton/train/image/00018_00.jpg",
+      "agnostic_mask": "/workspace/vton/train/agnostic-mask/00018_00_mask.png",
+      "cloth_image": "/workspace/graduate_project/leffa_photoguard_out_no_VAE/00018_00/cloth_clean.png",
+      "cloth_mask": "/workspace/vton/train/cloth-mask/00018_00.jpg",
+      "output": "outputs_no_VAE/clean/00018_00.jpg",
+      "sample": "00018_00",
+      "mode": "clean",
+      "status": "ok"
+    },
+    {
+      "src_image": "/workspace/vton/train/image/00018_00.jpg",
+      "agnostic_mask": "/workspace/vton/train/agnostic-mask/00018_00_mask.png",
+      "cloth_image": "/workspace/graduate_project/leffa_photoguard_out_no_VAE/00018_00/cloth_adv.png",
+      "cloth_mask": "/workspace/vton/train/cloth-mask/00018_00.jpg",
+      "output": "outputs_no_VAE/adv/00018_00.jpg",
+      "sample": "00018_00",
+      "mode": "adv",
+      "status": "ok"
+    },
+    {
+      "src_image": "/workspace/vton/train/image/00019_00.jpg",
+      "agnostic_mask": "/workspace/vton/train/agnostic-mask/00019_00_mask.png",
+      "cloth_image": "/workspace/graduate_project/leffa_photoguard_out_no_VAE/00019_00/cloth_clean.png",
+      "cloth_mask": "/workspace/vton/train/cloth-mask/00019_00.jpg",
+      "output": "outputs_no_VAE/clean/00019_00.jpg",
+      "sample": "00019_00",
+      "mode": "clean",
+      "status": "ok"
+    },
+    {
+      "src_image": "/workspace/vton/train/image/00019_00.jpg",
+      "agnostic_mask": "/workspace/vton/train/agnostic-mask/00019_00_mask.png",
+      "cloth_image": "/workspace/graduate_project/leffa_photoguard_out_no_VAE/00019_00/cloth_adv.png",
+      "cloth_mask": "/workspace/vton/train/cloth-mask/00019_00.jpg",
+      "output": "outputs_no_VAE/adv/00019_00.jpg",
+      "sample": "00019_00",
+      "mode": "adv",
+      "status": "ok"
+    },
+    {
+      "src_image": "/workspace/vton/train/image/00022_00.jpg",
+      "agnostic_mask": "/workspace/vton/train/agnostic-mask/00022_00_mask.png",
+      "cloth_image": "/workspace/graduate_project/leffa_photoguard_out_no_VAE/00022_00/cloth_clean.png",
+      "cloth_mask": "/workspace/vton/train/cloth-mask/00022_00.jpg",
+      "output": "outputs_no_VAE/clean/00022_00.jpg",
+      "sample": "00022_00",
+      "mode": "clean",
+      "status": "ok"
+    },
+    {
+      "src_image": "/workspace/vton/train/image/00022_00.jpg",
+      "agnostic_mask": "/workspace/vton/train/agnostic-mask/00022_00_mask.png",
+      "cloth_image": "/workspace/graduate_project/leffa_photoguard_out_no_VAE/00022_00/cloth_adv.png",
+      "cloth_mask": "/workspace/vton/train/cloth-mask/00022_00.jpg",
+      "output": "outputs_no_VAE/adv/00022_00.jpg",
+      "sample": "00022_00",
+      "mode": "adv",
+      "status": "ok"
+    },
+    {
+      "src_image": "/workspace/vton/train/image/00023_00.jpg",
+      "agnostic_mask": "/workspace/vton/train/agnostic-mask/00023_00_mask.png",
+      "cloth_image": "/workspace/graduate_project/leffa_photoguard_out_no_VAE/00023_00/cloth_clean.png",
+      "cloth_mask": "/workspace/vton/train/cloth-mask/00023_00.jpg",
+      "output": "outputs_no_VAE/clean/00023_00.jpg",
+      "sample": "00023_00",
+      "mode": "clean",
+      "status": "ok"
+    },
+    {
+      "src_image": "/workspace/vton/train/image/00023_00.jpg",
+      "agnostic_mask": "/workspace/vton/train/agnostic-mask/00023_00_mask.png",
+      "cloth_image": "/workspace/graduate_project/leffa_photoguard_out_no_VAE/00023_00/cloth_adv.png",
+      "cloth_mask": "/workspace/vton/train/cloth-mask/00023_00.jpg",
+      "output": "outputs_no_VAE/adv/00023_00.jpg",
+      "sample": "00023_00",
+      "mode": "adv",
+      "status": "ok"
+    },
+    {
+      "src_image": "/workspace/vton/train/image/00024_00.jpg",
+      "agnostic_mask": "/workspace/vton/train/agnostic-mask/00024_00_mask.png",
+      "cloth_image": "/workspace/graduate_project/leffa_photoguard_out_no_VAE/00024_00/cloth_clean.png",
+      "cloth_mask": "/workspace/vton/train/cloth-mask/00024_00.jpg",
+      "output": "outputs_no_VAE/clean/00024_00.jpg",
+      "sample": "00024_00",
+      "mode": "clean",
+      "status": "ok"
+    },
+    {
+      "src_image": "/workspace/vton/train/image/00024_00.jpg",
+      "agnostic_mask": "/workspace/vton/train/agnostic-mask/00024_00_mask.png",
+      "cloth_image": "/workspace/graduate_project/leffa_photoguard_out_no_VAE/00024_00/cloth_adv.png",
+      "cloth_mask": "/workspace/vton/train/cloth-mask/00024_00.jpg",
+      "output": "outputs_no_VAE/adv/00024_00.jpg",
+      "sample": "00024_00",
+      "mode": "adv",
+      "status": "ok"
+    },
+    {
+      "src_image": "/workspace/vton/train/image/00025_00.jpg",
+      "agnostic_mask": "/workspace/vton/train/agnostic-mask/00025_00_mask.png",
+      "cloth_image": "/workspace/graduate_project/leffa_photoguard_out_no_VAE/00025_00/cloth_clean.png",
+      "cloth_mask": "/workspace/vton/train/cloth-mask/00025_00.jpg",
+      "output": "outputs_no_VAE/clean/00025_00.jpg",
+      "sample": "00025_00",
+      "mode": "clean",
+      "status": "ok"
+    },
+    {
+      "src_image": "/workspace/vton/train/image/00025_00.jpg",
+      "agnostic_mask": "/workspace/vton/train/agnostic-mask/00025_00_mask.png",
+      "cloth_image": "/workspace/graduate_project/leffa_photoguard_out_no_VAE/00025_00/cloth_adv.png",
+      "cloth_mask": "/workspace/vton/train/cloth-mask/00025_00.jpg",
+      "output": "outputs_no_VAE/adv/00025_00.jpg",
+      "sample": "00025_00",
+      "mode": "adv",
+      "status": "ok"
+    },
+    {
+      "src_image": "/workspace/vton/train/image/00026_00.jpg",
+      "agnostic_mask": "/workspace/vton/train/agnostic-mask/00026_00_mask.png",
+      "cloth_image": "/workspace/graduate_project/leffa_photoguard_out_no_VAE/00026_00/cloth_clean.png",
+      "cloth_mask": "/workspace/vton/train/cloth-mask/00026_00.jpg",
+      "output": "outputs_no_VAE/clean/00026_00.jpg",
+      "sample": "00026_00",
+      "mode": "clean",
+      "status": "ok"
+    },
+    {
+      "src_image": "/workspace/vton/train/image/00026_00.jpg",
+      "agnostic_mask": "/workspace/vton/train/agnostic-mask/00026_00_mask.png",
+      "cloth_image": "/workspace/graduate_project/leffa_photoguard_out_no_VAE/00026_00/cloth_adv.png",
+      "cloth_mask": "/workspace/vton/train/cloth-mask/00026_00.jpg",
+      "output": "outputs_no_VAE/adv/00026_00.jpg",
+      "sample": "00026_00",
+      "mode": "adv",
+      "status": "ok"
+    },
+    {
+      "src_image": "/workspace/vton/train/image/00028_00.jpg",
+      "agnostic_mask": "/workspace/vton/train/agnostic-mask/00028_00_mask.png",
+      "cloth_image": "/workspace/graduate_project/leffa_photoguard_out_no_VAE/00028_00/cloth_clean.png",
+      "cloth_mask": "/workspace/vton/train/cloth-mask/00028_00.jpg",
+      "output": "outputs_no_VAE/clean/00028_00.jpg",
+      "sample": "00028_00",
+      "mode": "clean",
+      "status": "ok"
+    },
+    {
+      "src_image": "/workspace/vton/train/image/00028_00.jpg",
+      "agnostic_mask": "/workspace/vton/train/agnostic-mask/00028_00_mask.png",
+      "cloth_image": "/workspace/graduate_project/leffa_photoguard_out_no_VAE/00028_00/cloth_adv.png",
+      "cloth_mask": "/workspace/vton/train/cloth-mask/00028_00.jpg",
+      "output": "outputs_no_VAE/adv/00028_00.jpg",
+      "sample": "00028_00",
+      "mode": "adv",
+      "status": "ok"
+    },
+    {
+      "src_image": "/workspace/vton/train/image/00029_00.jpg",
+      "agnostic_mask": "/workspace/vton/train/agnostic-mask/00029_00_mask.png",
+      "cloth_image": "/workspace/graduate_project/leffa_photoguard_out_no_VAE/00029_00/cloth_clean.png",
+      "cloth_mask": "/workspace/vton/train/cloth-mask/00029_00.jpg",
+      "output": "outputs_no_VAE/clean/00029_00.jpg",
+      "sample": "00029_00",
+      "mode": "clean",
+      "status": "ok"
+    },
+    {
+      "src_image": "/workspace/vton/train/image/00029_00.jpg",
+      "agnostic_mask": "/workspace/vton/train/agnostic-mask/00029_00_mask.png",
+      "cloth_image": "/workspace/graduate_project/leffa_photoguard_out_no_VAE/00029_00/cloth_adv.png",
+      "cloth_mask": "/workspace/vton/train/cloth-mask/00029_00.jpg",
+      "output": "outputs_no_VAE/adv/00029_00.jpg",
+      "sample": "00029_00",
+      "mode": "adv",
+      "status": "ok"
+    },
+    {
+      "src_image": "/workspace/vton/train/image/00030_00.jpg",
+      "agnostic_mask": "/workspace/vton/train/agnostic-mask/00030_00_mask.png",
+      "cloth_image": "/workspace/graduate_project/leffa_photoguard_out_no_VAE/00030_00/cloth_clean.png",
+      "cloth_mask": "/workspace/vton/train/cloth-mask/00030_00.jpg",
+      "output": "outputs_no_VAE/clean/00030_00.jpg",
+      "sample": "00030_00",
+      "mode": "clean",
+      "status": "ok"
+    },
+    {
+      "src_image": "/workspace/vton/train/image/00030_00.jpg",
+      "agnostic_mask": "/workspace/vton/train/agnostic-mask/00030_00_mask.png",
+      "cloth_image": "/workspace/graduate_project/leffa_photoguard_out_no_VAE/00030_00/cloth_adv.png",
+      "cloth_mask": "/workspace/vton/train/cloth-mask/00030_00.jpg",
+      "output": "outputs_no_VAE/adv/00030_00.jpg",
+      "sample": "00030_00",
+      "mode": "adv",
+      "status": "ok"
+    },
+    {
+      "src_image": "/workspace/vton/train/image/00031_00.jpg",
+      "agnostic_mask": "/workspace/vton/train/agnostic-mask/00031_00_mask.png",
+      "cloth_image": "/workspace/graduate_project/leffa_photoguard_out_no_VAE/00031_00/cloth_clean.png",
+      "cloth_mask": "/workspace/vton/train/cloth-mask/00031_00.jpg",
+      "output": "outputs_no_VAE/clean/00031_00.jpg",
+      "sample": "00031_00",
+      "mode": "clean",
+      "status": "ok"
+    },
+    {
+      "src_image": "/workspace/vton/train/image/00031_00.jpg",
+      "agnostic_mask": "/workspace/vton/train/agnostic-mask/00031_00_mask.png",
+      "cloth_image": "/workspace/graduate_project/leffa_photoguard_out_no_VAE/00031_00/cloth_adv.png",
+      "cloth_mask": "/workspace/vton/train/cloth-mask/00031_00.jpg",
+      "output": "outputs_no_VAE/adv/00031_00.jpg",
+      "sample": "00031_00",
+      "mode": "adv",
+      "status": "ok"
+    },
+    {
+      "src_image": "/workspace/vton/train/image/00032_00.jpg",
+      "agnostic_mask": "/workspace/vton/train/agnostic-mask/00032_00_mask.png",
+      "cloth_image": "/workspace/graduate_project/leffa_photoguard_out_no_VAE/00032_00/cloth_clean.png",
+      "cloth_mask": "/workspace/vton/train/cloth-mask/00032_00.jpg",
+      "output": "outputs_no_VAE/clean/00032_00.jpg",
+      "sample": "00032_00",
+      "mode": "clean",
+      "status": "ok"
+    },
+    {
+      "src_image": "/workspace/vton/train/image/00032_00.jpg",
+      "agnostic_mask": "/workspace/vton/train/agnostic-mask/00032_00_mask.png",
+      "cloth_image": "/workspace/graduate_project/leffa_photoguard_out_no_VAE/00032_00/cloth_adv.png",
+      "cloth_mask": "/workspace/vton/train/cloth-mask/00032_00.jpg",
+      "output": "outputs_no_VAE/adv/00032_00.jpg",
+      "sample": "00032_00",
+      "mode": "adv",
+      "status": "ok"
+    },
+    {
+      "src_image": "/workspace/vton/train/image/00033_00.jpg",
+      "agnostic_mask": "/workspace/vton/train/agnostic-mask/00033_00_mask.png",
+      "cloth_image": "/workspace/graduate_project/leffa_photoguard_out_no_VAE/00033_00/cloth_clean.png",
+      "cloth_mask": "/workspace/vton/train/cloth-mask/00033_00.jpg",
+      "output": "outputs_no_VAE/clean/00033_00.jpg",
+      "sample": "00033_00",
+      "mode": "clean",
+      "status": "ok"
+    },
+    {
+      "src_image": "/workspace/vton/train/image/00033_00.jpg",
+      "agnostic_mask": "/workspace/vton/train/agnostic-mask/00033_00_mask.png",
+      "cloth_image": "/workspace/graduate_project/leffa_photoguard_out_no_VAE/00033_00/cloth_adv.png",
+      "cloth_mask": "/workspace/vton/train/cloth-mask/00033_00.jpg",
+      "output": "outputs_no_VAE/adv/00033_00.jpg",
+      "sample": "00033_00",
+      "mode": "adv",
+      "status": "ok"
+    },
+    {
+      "src_image": "/workspace/vton/train/image/00036_00.jpg",
+      "agnostic_mask": "/workspace/vton/train/agnostic-mask/00036_00_mask.png",
+      "cloth_image": "/workspace/graduate_project/leffa_photoguard_out_no_VAE/00036_00/cloth_clean.png",
+      "cloth_mask": "/workspace/vton/train/cloth-mask/00036_00.jpg",
+      "output": "outputs_no_VAE/clean/00036_00.jpg",
+      "sample": "00036_00",
+      "mode": "clean",
+      "status": "ok"
+    },
+    {
+      "src_image": "/workspace/vton/train/image/00036_00.jpg",
+      "agnostic_mask": "/workspace/vton/train/agnostic-mask/00036_00_mask.png",
+      "cloth_image": "/workspace/graduate_project/leffa_photoguard_out_no_VAE/00036_00/cloth_adv.png",
+      "cloth_mask": "/workspace/vton/train/cloth-mask/00036_00.jpg",
+      "output": "outputs_no_VAE/adv/00036_00.jpg",
+      "sample": "00036_00",
+      "mode": "adv",
+      "status": "ok"
+    },
+    {
+      "src_image": "/workspace/vton/train/image/00038_00.jpg",
+      "agnostic_mask": "/workspace/vton/train/agnostic-mask/00038_00_mask.png",
+      "cloth_image": "/workspace/graduate_project/leffa_photoguard_out_no_VAE/00038_00/cloth_clean.png",
+      "cloth_mask": "/workspace/vton/train/cloth-mask/00038_00.jpg",
+      "output": "outputs_no_VAE/clean/00038_00.jpg",
+      "sample": "00038_00",
+      "mode": "clean",
+      "status": "ok"
+    },
+    {
+      "src_image": "/workspace/vton/train/image/00038_00.jpg",
+      "agnostic_mask": "/workspace/vton/train/agnostic-mask/00038_00_mask.png",
+      "cloth_image": "/workspace/graduate_project/leffa_photoguard_out_no_VAE/00038_00/cloth_adv.png",
+      "cloth_mask": "/workspace/vton/train/cloth-mask/00038_00.jpg",
+      "output": "outputs_no_VAE/adv/00038_00.jpg",
+      "sample": "00038_00",
+      "mode": "adv",
+      "status": "ok"
+    },
+    {
+      "src_image": "/workspace/vton/train/image/00040_00.jpg",
+      "agnostic_mask": "/workspace/vton/train/agnostic-mask/00040_00_mask.png",
+      "cloth_image": "/workspace/graduate_project/leffa_photoguard_out_no_VAE/00040_00/cloth_clean.png",
+      "cloth_mask": "/workspace/vton/train/cloth-mask/00040_00.jpg",
+      "output": "outputs_no_VAE/clean/00040_00.jpg",
+      "sample": "00040_00",
+      "mode": "clean",
+      "status": "ok"
+    },
+    {
+      "src_image": "/workspace/vton/train/image/00040_00.jpg",
+      "agnostic_mask": "/workspace/vton/train/agnostic-mask/00040_00_mask.png",
+      "cloth_image": "/workspace/graduate_project/leffa_photoguard_out_no_VAE/00040_00/cloth_adv.png",
+      "cloth_mask": "/workspace/vton/train/cloth-mask/00040_00.jpg",
+      "output": "outputs_no_VAE/adv/00040_00.jpg",
+      "sample": "00040_00",
+      "mode": "adv",
+      "status": "ok"
+    },
+    {
+      "src_image": "/workspace/vton/train/image/00041_00.jpg",
+      "agnostic_mask": "/workspace/vton/train/agnostic-mask/00041_00_mask.png",
+      "cloth_image": "/workspace/graduate_project/leffa_photoguard_out_no_VAE/00041_00/cloth_clean.png",
+      "cloth_mask": "/workspace/vton/train/cloth-mask/00041_00.jpg",
+      "output": "outputs_no_VAE/clean/00041_00.jpg",
+      "sample": "00041_00",
+      "mode": "clean",
+      "status": "ok"
+    },
+    {
+      "src_image": "/workspace/vton/train/image/00041_00.jpg",
+      "agnostic_mask": "/workspace/vton/train/agnostic-mask/00041_00_mask.png",
+      "cloth_image": "/workspace/graduate_project/leffa_photoguard_out_no_VAE/00041_00/cloth_adv.png",
+      "cloth_mask": "/workspace/vton/train/cloth-mask/00041_00.jpg",
+      "output": "outputs_no_VAE/adv/00041_00.jpg",
+      "sample": "00041_00",
+      "mode": "adv",
+      "status": "ok"
+    }
+  ],
+  "failed": [],
+  "skipped": [],
+  "num_tasks": 60,
+  "num_processed_entries": 60,
+  "num_failed": 0,
+  "num_skipped": 0
+}

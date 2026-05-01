@@ -1,0 +1,186 @@
+{
+  "config": {
+    "pretrained_model_name_or_path": "runwayml/stable-diffusion-inpainting",
+    "pretrained_model": "./ckpts/virtual_tryon.pth",
+    "src_image": "/workspace/vton/train/image/00031_00.jpg",
+    "ref_image": "/workspace/vton/train/cloth/00031_00.jpg",
+    "model_mask_image": "/workspace/vton/train/agnostic-mask/00031_00_mask.png",
+    "cloth_mask_image": "/workspace/vton/train/cloth-mask/00031_00.jpg",
+    "densepose_image": "/workspace/vton/train/image-densepose/00031_00.jpg",
+    "target_cloth_image": null,
+    "dataset": "virtual_tryon",
+    "target_timestep": 981,
+    "target_step_index": 0,
+    "num_inference_steps": 50,
+    "guidance_scale": 2.5,
+    "seed": 42,
+    "dtype": "float16",
+    "pgd_steps": 30,
+    "epsilon_pixels": 8.0,
+    "alpha_pixels": 1.0,
+    "random_start": false
+  },
+  "history": [
+    {
+      "iteration": -1,
+      "kind": "clean",
+      "loss": 7.46875
+    },
+    {
+      "iteration": 0,
+      "kind": "pgd",
+      "loss": 7.46875
+    },
+    {
+      "iteration": 1,
+      "kind": "pgd",
+      "loss": 7.37890625
+    },
+    {
+      "iteration": 2,
+      "kind": "pgd",
+      "loss": 7.28515625
+    },
+    {
+      "iteration": 3,
+      "kind": "pgd",
+      "loss": 7.1875
+    },
+    {
+      "iteration": 4,
+      "kind": "pgd",
+      "loss": 7.09375
+    },
+    {
+      "iteration": 5,
+      "kind": "pgd",
+      "loss": 6.99609375
+    },
+    {
+      "iteration": 6,
+      "kind": "pgd",
+      "loss": 6.90234375
+    },
+    {
+      "iteration": 7,
+      "kind": "pgd",
+      "loss": 6.8125
+    },
+    {
+      "iteration": 8,
+      "kind": "pgd",
+      "loss": 6.73046875
+    },
+    {
+      "iteration": 9,
+      "kind": "pgd",
+      "loss": 6.69921875
+    },
+    {
+      "iteration": 10,
+      "kind": "pgd",
+      "loss": 6.66796875
+    },
+    {
+      "iteration": 11,
+      "kind": "pgd",
+      "loss": 6.62890625
+    },
+    {
+      "iteration": 12,
+      "kind": "pgd",
+      "loss": 6.59375
+    },
+    {
+      "iteration": 13,
+      "kind": "pgd",
+      "loss": 6.5859375
+    },
+    {
+      "iteration": 14,
+      "kind": "pgd",
+      "loss": 6.56640625
+    },
+    {
+      "iteration": 15,
+      "kind": "pgd",
+      "loss": 6.55859375
+    },
+    {
+      "iteration": 16,
+      "kind": "pgd",
+      "loss": 6.5390625
+    },
+    {
+      "iteration": 17,
+      "kind": "pgd",
+      "loss": 6.5234375
+    },
+    {
+      "iteration": 18,
+      "kind": "pgd",
+      "loss": 6.50390625
+    },
+    {
+      "iteration": 19,
+      "kind": "pgd",
+      "loss": 6.48828125
+    },
+    {
+      "iteration": 20,
+      "kind": "pgd",
+      "loss": 6.46875
+    },
+    {
+      "iteration": 21,
+      "kind": "pgd",
+      "loss": 6.4453125
+    },
+    {
+      "iteration": 22,
+      "kind": "pgd",
+      "loss": 6.41796875
+    },
+    {
+      "iteration": 23,
+      "kind": "pgd",
+      "loss": 6.38671875
+    },
+    {
+      "iteration": 24,
+      "kind": "pgd",
+      "loss": 6.3515625
+    },
+    {
+      "iteration": 25,
+      "kind": "pgd",
+      "loss": 6.3125
+    },
+    {
+      "iteration": 26,
+      "kind": "pgd",
+      "loss": 6.26953125
+    },
+    {
+      "iteration": 27,
+      "kind": "pgd",
+      "loss": 6.21875
+    },
+    {
+      "iteration": 28,
+      "kind": "pgd",
+      "loss": 6.16015625
+    },
+    {
+      "iteration": 29,
+      "kind": "pgd",
+      "loss": 6.0859375
+    },
+    {
+      "iteration": 30,
+      "kind": "final",
+      "loss": 6.01171875
+    }
+  ],
+  "final_delta_linf_normalized": 1.0830940008163452
+}
