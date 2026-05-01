@@ -47,7 +47,7 @@ from PIL import Image
 from huggingface_hub import login, snapshot_download
 
 # Hugging Face 토큰 적용 및 모델 다운로드
-HF_TOKEN = "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"
+HF_TOKEN = ""
 login(token=HF_TOKEN)
 
 if not os.path.exists("./ckpts/virtual_tryon.pth"):
